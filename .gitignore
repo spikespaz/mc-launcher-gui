@@ -1,1 +1,12 @@
+# Rust
 /target
+/Cargo.lock
+
+# Project
+/scratch.rs
+
+# Nix
+/result
+
+# Editors
+.vscode/
