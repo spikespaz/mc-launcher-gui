@@ -36,7 +36,7 @@ export struct GruvboxPalette {
     gray: brush,
 }
 
-export enum Accent {
+export enum AccentName {
     Red, Green, Yellow, Blue, Purple, Aqua, Orange
 }
 
@@ -46,7 +46,7 @@ export struct AccentShades {
     faded: brush,
 }
 
-export struct AccentTrio {
+export struct SchemeAccent {
     default: brush,
     secondary: brush,
     tertiary: brush,
@@ -54,7 +54,7 @@ export struct AccentTrio {
 
 export global SchemeSelector  {
     in property <bool> dark-color-scheme: true;
-    in property <Accent> primary-accent: Aqua;
+    in property <AccentName> primary-accent: Aqua;
 
     public pure function gruvbox-palette(dark: bool) -> GruvboxPalette {{
         fg: dark ? Colors.light1 : Colors.dark1,
@@ -94,31 +94,29 @@ export global SchemeSelector  {
         gray: dark ? Colors.gray-245 : Colors.gray-244,
     }}
 
-    public pure function shades-of(color: Accent) -> AccentShades {
-        if (color == Accent.Red) {
+    public pure function shades-of(color: AccentName) -> AccentShades {
+        if (color == AccentName.Red) {
             GlobalAccents.red
-        } else if (color == Accent.Green) {
+        } else if (color == AccentName.Green) {
             GlobalAccents.green
-        } else if (color == Accent.Yellow) {
+        } else if (color == AccentName.Yellow) {
             GlobalAccents.yellow
-        } else if (color == Accent.Blue) {
+        } else if (color == AccentName.Blue) {
             GlobalAccents.blue
-        } else if (color == Accent.Purple) {
+        } else if (color == AccentName.Purple) {
             GlobalAccents.purple
-        } else if (color == Accent.Aqua) {
+        } else if (color == AccentName.Aqua) {
             GlobalAccents.aqua
-        } else if (color == Accent.Orange) {
+        } else if (color == AccentName.Orange) {
             GlobalAccents.orange
-        } else {
-            {
-                neutral: #FF0000,
-                bright: #00FF00,
-                faded: #00FFFF,
-            }
-        }
+        } else {{
+            neutral: #FF0000,
+            bright: #00FF00,
+            faded: #00FFFF,
+        }}
     }
 
-    public pure function accents-of(dark: bool, color: Accent) -> AccentTrio {
+    public pure function accents-of(dark: bool, color: AccentName) -> SchemeAccent {
         dark ? {
             default: shades-of(color).bright,
             secondary: shades-of(color).neutral,
@@ -221,7 +219,7 @@ export global GlobalPalette {
 
 export global GlobalAccents {
     in-out property <bool> dark-color-scheme: SchemeSelector.dark-color-scheme;
-    in-out property <Accent> primary-accent: SchemeSelector.primary-accent;
+    in-out property <AccentName> primary-accent: SchemeSelector.primary-accent;
 
     out property <AccentShades> red: {
         neutral: Colors.neutral-red,
@@ -258,6 +256,4 @@ export global GlobalAccents {
         bright: Colors.bright-orange,
         faded: Colors.faded-orange,
     };
-
-
 }

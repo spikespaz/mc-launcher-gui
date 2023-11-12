@@ -1,8 +1,8 @@
 import {
     SchemeSelector,
     GruvboxPalette,
-    Accent,
-    AccentTrio,
+    AccentName,
+    AccentShades,
     GlobalPalette,
     GlobalAccents
 } from "color-scheme.slint";
@@ -20,7 +20,7 @@ component ColorBox inherits Rectangle {
     }
 }
 
-component PaletteDisplay inherits Rectangle {
+component GruvboxPaletteDisplay inherits Rectangle {
     in property <bool> dark: true;
     in property <GruvboxPalette> colors: SchemeSelector.gruvbox-palette(dark);
 
@@ -77,49 +77,45 @@ component PaletteDisplay inherits Rectangle {
     }
 }
 
-component AccentPalette inherits Rectangle {
-    in property <bool> dark: SchemeSelector.dark-color-scheme;
-    in property <Accent> accent: SchemeSelector.primary-accent;
-    in property <GruvboxPalette> colors: SchemeSelector.gruvbox-palette(dark);
-    in property <AccentTrio> accents: SchemeSelector.accents-of(dark, accent);
+component AccentShadesPaletteDisplay inherits Rectangle {
+    in property <AccentName> accent: SchemeSelector.primary-accent;
+    in property <GruvboxPalette> colors: SchemeSelector.gruvbox-palette(true);
+    in property <AccentShades> accents: SchemeSelector.shades-of(accent);
 
     VerticalLayout {
-        ColorBox { text: "default"; fg: dark ? colors.fg : colors.bg; bg: accents.default; }
-        ColorBox { text: "secondary"; fg: dark ? colors.fg : colors.bg; bg: accents.secondary; }
-        ColorBox { text: "tertiary"; fg: dark ? colors.fg : colors.bg; bg: accents.tertiary; }
+        ColorBox { text: "bright"; fg: colors.fg; bg: accents.bright; }
+        ColorBox { text: "neutral"; fg: colors.fg; bg: accents.neutral; }
+        ColorBox { text: "faded"; fg: colors.fg; bg: accents.faded; }
     }
 }
 
 component AccentPaletteDisplay inherits Rectangle {
-    in property <bool> dark: SchemeSelector.dark-color-scheme;
-    in property <GruvboxPalette> colors: SchemeSelector.gruvbox-palette(dark);
+    in property <GruvboxPalette> colors: SchemeSelector.gruvbox-palette(true);
 
     VerticalLayout {
         Rectangle {
             height: 50px;
             Text {
-                text: dark ? "Dark" : "Light";
+                text: "Accent Colors";
                 font-size: 2rem;
             }
         }
         HorizontalLayout {
             Rectangle { height: 90px * 3; width: 120px; }
-            AccentPalette { dark: dark; accent: Accent.Red; }
-            AccentPalette { dark: dark; accent: Accent.Yellow; }
-            AccentPalette { dark: dark; accent: Accent.Orange; }
-            AccentPalette { dark: dark; accent: Accent.Green; }
-            AccentPalette { dark: dark; accent: Accent.Aqua; }
-            AccentPalette { dark: dark; accent: Accent.Blue; }
-            AccentPalette { dark: dark; accent: Accent.Purple; }
+            AccentShadesPaletteDisplay { accent: AccentName.Red; }
+            AccentShadesPaletteDisplay { accent: AccentName.Yellow; }
+            AccentShadesPaletteDisplay { accent: AccentName.Orange; }
+            AccentShadesPaletteDisplay { accent: AccentName.Green; }
+            AccentShadesPaletteDisplay { accent: AccentName.Aqua; }
+            AccentShadesPaletteDisplay { accent: AccentName.Blue; }
+            AccentShadesPaletteDisplay { accent: AccentName.Purple; }
         }
     }
 }
 
-
 export component PaletteDemo inherits VerticalLayout {
-    PaletteDisplay { dark: true; }
-    PaletteDisplay { dark: false; }
-    AccentPaletteDisplay { dark: true; }
-    AccentPaletteDisplay { dark: false; }
+    GruvboxPaletteDisplay { dark: true; }
+    GruvboxPaletteDisplay { dark: false; }
+    AccentPaletteDisplay { }
 }
 
