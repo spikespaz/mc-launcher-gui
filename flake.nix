@@ -43,11 +43,14 @@
 
       overlays = {
         mc-launcher-gui = pkgs: _: {
-          mc-launcher-gui = pkgs.callPackage ./nix/package.nix {
+          mc-launcher-gui = pkgs.callPackage ./nix/package.nix ({
             inherit lib;
             sourceRoot = ./.;
             platforms = import systems;
-          };
+          } // lib.optionalAttrs (pkgs ? rust-bin) {
+            rustc = pkgs.rust-bin.stable.latest.minimal;
+            cargo = pkgs.rust-bin.stable.latest.minimal;
+          });
         };
         default = self.overlays.mc-launcher-gui;
       };

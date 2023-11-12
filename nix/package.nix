@@ -4,7 +4,7 @@ sourceRoot ? ./.., platforms ? [ "x86_64-linux" ],
 #
 lib,
 #
-makeRustPlatform, rustPlatform, rust-bin ? null,
+cargo, rustc, makeRustPlatform,
 #
 llvmPackages_16, wayland, freetype, fontconfig, python3
 #
@@ -12,15 +12,12 @@ llvmPackages_16, wayland, freetype, fontconfig, python3
 let
   manifest = lib.importTOML "${sourceRoot}/Cargo.toml";
 
-  rustPlatform' = if rust-bin != null then
-    makeRustPlatform {
-      cargo = rust-bin.stable.latest.minimal;
-      rustc = rust-bin.stable.latest.minimal;
-      stdenv = llvmPackages_16.stdenv;
-    }
-  else
-    makeRustPlatform { stdenv = llvmPackages_16.stdenv; };
-in rustPlatform'.buildRustPackage {
+  rustPlatform = makeRustPlatform {
+    cargo = cargo;
+    rustc = rustc;
+    stdenv = llvmPackages_16.stdenv;
+  };
+in rustPlatform.buildRustPackage {
   pname = manifest.package.name;
   version = manifest.package.version;
 
