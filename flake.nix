@@ -13,7 +13,7 @@
       pkgsFor = eachSystem (system:
         import nixpkgs {
           localSystem = system;
-          overlays = [ rust-overlay.overlays.default ];
+          overlays = [ rust-overlay.overlays.default self.overlays.default ];
         });
     in {
       devShells = eachSystem (system:
@@ -37,13 +37,11 @@
         });
 
       packages = eachSystem (system: {
+        inherit (pkgsFor.${system}) mc-launcher-gui;
         default = self.packages.${system}.mc-launcher-gui;
-        mc-launcher-gui = (self.overlays.default pkgsFor.${system}
-          pkgsFor.${system}).mc-launcher-gui;
       });
 
       overlays = {
-        default = self.overlays.mc-launcher-gui;
         mc-launcher-gui = pkgs: _: {
           mc-launcher-gui = pkgs.callPackage ./nix/package.nix {
             inherit lib;
@@ -51,6 +49,7 @@
             platforms = import systems;
           };
         };
+        default = self.overlays.mc-launcher-gui;
       };
 
       formatter = eachSystem (system: nixfmt.packages.${system}.default);
