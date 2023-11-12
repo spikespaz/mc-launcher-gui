@@ -6,7 +6,7 @@
     nixfmt.url = "github:serokell/nixfmt";
   };
 
-  outputs = { nixpkgs, systems, rust-overlay, nixfmt, ... }:
+  outputs = { self, nixpkgs, systems, rust-overlay, nixfmt }:
     let
       inherit (nixpkgs) lib;
       eachSystem = lib.genAttrs (import systems);
@@ -35,6 +35,23 @@
             # RUST_BACKTRACE = 1;
           };
         });
+
+      packages = eachSystem (system: {
+        default = self.packages.${system}.mc-launcher-gui;
+        mc-launcher-gui = (self.overlays.default pkgsFor.${system}
+          pkgsFor.${system}).mc-launcher-gui;
+      });
+
+      overlays = {
+        default = self.overlays.mc-launcher-gui;
+        mc-launcher-gui = pkgs: _: {
+          mc-launcher-gui = pkgs.callPackage ./nix/package.nix {
+            inherit lib;
+            sourceRoot = ./.;
+            platforms = import systems;
+          };
+        };
+      };
 
       formatter = eachSystem (system: nixfmt.packages.${system}.default);
     };
