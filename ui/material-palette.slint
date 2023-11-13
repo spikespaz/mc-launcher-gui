@@ -360,140 +360,206 @@ export global MaterialPalette {
     };
 }
 
+export struct AccentPalette {
+    normal: brush,
+    faded: brush,
+    bright: brush,
+    background: brush,
+    foreground: brush,
+    special: brush,
+}
+
 export global MaterialScheme {
     in-out property <bool> dark-theme;
 
-    out property <brush> red-normal: MaterialPalette.red.m;
-    out property <brush> red-faded: dark-theme ? MaterialPalette.red.m-700 : MaterialPalette.red.m-300;
-    out property <brush> red-bright: dark-theme ? MaterialPalette.red.m-300 : MaterialPalette.red.m-700;
-    out property <brush> red-background: dark-theme ? MaterialPalette.red.m-800 : MaterialPalette.red.m-200;
-    out property <brush> red-foreground: dark-theme ? MaterialPalette.red.m-100 : MaterialPalette.red.m-900;
-    out property <brush> red-special: dark-theme ? MaterialPalette.red.m-A700 : MaterialPalette.red.m-A100;
+    in-out property <string> primary-accent-color: "teal";
+    in-out property <string> secondary-accent-color: "deepOrange";
 
-    out property <brush> pink-normal: MaterialPalette.pink.m;
-    out property <brush> pink-faded: dark-theme ? MaterialPalette.pink.m-700 : MaterialPalette.pink.m-300;
-    out property <brush> pink-bright: dark-theme ? MaterialPalette.pink.m-300 : MaterialPalette.pink.m-700;
-    out property <brush> pink-background: dark-theme ? MaterialPalette.pink.m-800 : MaterialPalette.pink.m-200;
-    out property <brush> pink-foreground: dark-theme ? MaterialPalette.pink.m-100 : MaterialPalette.pink.m-900;
-    out property <brush> pink-special: dark-theme ? MaterialPalette.pink.m-A700 : MaterialPalette.pink.m-A100;
+    out property <AccentPalette> primary-accent: scheme(primary-accent-color);
+    out property <AccentPalette> secondary-accent: scheme(secondary-accent-color);
 
-    out property <brush> purple-normal: MaterialPalette.purple.m;
-    out property <brush> purple-faded: dark-theme ? MaterialPalette.purple.m-700 : MaterialPalette.purple.m-300;
-    out property <brush> purple-bright: dark-theme ? MaterialPalette.purple.m-300 : MaterialPalette.purple.m-700;
-    out property <brush> purple-background: dark-theme ? MaterialPalette.purple.m-800 : MaterialPalette.purple.m-200;
-    out property <brush> purple-foreground: dark-theme ? MaterialPalette.purple.m-100 : MaterialPalette.purple.m-900;
-    out property <brush> purple-special: dark-theme ? MaterialPalette.purple.m-A700 : MaterialPalette.purple.m-A100;
-
-    out property <brush> deepPurple-normal: MaterialPalette.deepPurple.m;
-    out property <brush> deepPurple-faded: dark-theme ? MaterialPalette.deepPurple.m-700 : MaterialPalette.deepPurple.m-300;
-    out property <brush> deepPurple-bright: dark-theme ? MaterialPalette.deepPurple.m-300 : MaterialPalette.deepPurple.m-700;
-    out property <brush> deepPurple-background: dark-theme ? MaterialPalette.deepPurple.m-800 : MaterialPalette.deepPurple.m-200;
-    out property <brush> deepPurple-foreground: dark-theme ? MaterialPalette.deepPurple.m-100 : MaterialPalette.deepPurple.m-900;
-    out property <brush> deepPurple-special: dark-theme ? MaterialPalette.deepPurple.m-A700 : MaterialPalette.deepPurple.m-A100;
-
-    out property <brush> indigo-normal: MaterialPalette.indigo.m;
-    out property <brush> indigo-faded: dark-theme ? MaterialPalette.indigo.m-700 : MaterialPalette.indigo.m-300;
-    out property <brush> indigo-bright: dark-theme ? MaterialPalette.indigo.m-300 : MaterialPalette.indigo.m-700;
-    out property <brush> indigo-background: dark-theme ? MaterialPalette.indigo.m-800 : MaterialPalette.indigo.m-200;
-    out property <brush> indigo-foreground: dark-theme ? MaterialPalette.indigo.m-100 : MaterialPalette.indigo.m-900;
-    out property <brush> indigo-special: dark-theme ? MaterialPalette.indigo.m-A700 : MaterialPalette.indigo.m-A100;
-
-    out property <brush> blue-normal: MaterialPalette.blue.m;
-    out property <brush> blue-faded: dark-theme ? MaterialPalette.blue.m-700 : MaterialPalette.blue.m-300;
-    out property <brush> blue-bright: dark-theme ? MaterialPalette.blue.m-300 : MaterialPalette.blue.m-700;
-    out property <brush> blue-background: dark-theme ? MaterialPalette.blue.m-800 : MaterialPalette.blue.m-200;
-    out property <brush> blue-foreground: dark-theme ? MaterialPalette.blue.m-100 : MaterialPalette.blue.m-900;
-    out property <brush> blue-special: dark-theme ? MaterialPalette.blue.m-A700 : MaterialPalette.blue.m-A100;
-
-    out property <brush> lightBlue-normal: MaterialPalette.lightBlue.m;
-    out property <brush> lightBlue-faded: dark-theme ? MaterialPalette.lightBlue.m-700 : MaterialPalette.lightBlue.m-300;
-    out property <brush> lightBlue-bright: dark-theme ? MaterialPalette.lightBlue.m-300 : MaterialPalette.lightBlue.m-700;
-    out property <brush> lightBlue-background: dark-theme ? MaterialPalette.lightBlue.m-800 : MaterialPalette.lightBlue.m-200;
-    out property <brush> lightBlue-foreground: dark-theme ? MaterialPalette.lightBlue.m-100 : MaterialPalette.lightBlue.m-900;
-    out property <brush> lightBlue-special: dark-theme ? MaterialPalette.lightBlue.m-A700 : MaterialPalette.lightBlue.m-A100;
-
-    out property <brush> cyan-normal: MaterialPalette.cyan.m;
-    out property <brush> cyan-faded: dark-theme ? MaterialPalette.cyan.m-700 : MaterialPalette.cyan.m-300;
-    out property <brush> cyan-bright: dark-theme ? MaterialPalette.cyan.m-300 : MaterialPalette.cyan.m-700;
-    out property <brush> cyan-background: dark-theme ? MaterialPalette.cyan.m-800 : MaterialPalette.cyan.m-200;
-    out property <brush> cyan-foreground: dark-theme ? MaterialPalette.cyan.m-100 : MaterialPalette.cyan.m-900;
-    out property <brush> cyan-special: dark-theme ? MaterialPalette.cyan.m-A700 : MaterialPalette.cyan.m-A100;
-
-    out property <brush> teal-normal: MaterialPalette.teal.m;
-    out property <brush> teal-faded: dark-theme ? MaterialPalette.teal.m-700 : MaterialPalette.teal.m-300;
-    out property <brush> teal-bright: dark-theme ? MaterialPalette.teal.m-300 : MaterialPalette.teal.m-700;
-    out property <brush> teal-background: dark-theme ? MaterialPalette.teal.m-800 : MaterialPalette.teal.m-200;
-    out property <brush> teal-foreground: dark-theme ? MaterialPalette.teal.m-100 : MaterialPalette.teal.m-900;
-    out property <brush> teal-special: dark-theme ? MaterialPalette.teal.m-A700 : MaterialPalette.teal.m-A100;
-
-    out property <brush> green-normal: MaterialPalette.green.m;
-    out property <brush> green-faded: dark-theme ? MaterialPalette.green.m-700 : MaterialPalette.green.m-300;
-    out property <brush> green-bright: dark-theme ? MaterialPalette.green.m-300 : MaterialPalette.green.m-700;
-    out property <brush> green-background: dark-theme ? MaterialPalette.green.m-800 : MaterialPalette.green.m-200;
-    out property <brush> green-foreground: dark-theme ? MaterialPalette.green.m-100 : MaterialPalette.green.m-900;
-    out property <brush> green-special: dark-theme ? MaterialPalette.green.m-A700 : MaterialPalette.green.m-A100;
-
-    out property <brush> lightGreen-normal: MaterialPalette.lightGreen.m;
-    out property <brush> lightGreen-faded: dark-theme ? MaterialPalette.lightGreen.m-700 : MaterialPalette.lightGreen.m-300;
-    out property <brush> lightGreen-bright: dark-theme ? MaterialPalette.lightGreen.m-300 : MaterialPalette.lightGreen.m-700;
-    out property <brush> lightGreen-background: dark-theme ? MaterialPalette.lightGreen.m-800 : MaterialPalette.lightGreen.m-200;
-    out property <brush> lightGreen-foreground: dark-theme ? MaterialPalette.lightGreen.m-100 : MaterialPalette.lightGreen.m-900;
-    out property <brush> lightGreen-special: dark-theme ? MaterialPalette.lightGreen.m-A700 : MaterialPalette.lightGreen.m-A100;
-
-    out property <brush> lime-normal: MaterialPalette.lime.m;
-    out property <brush> lime-faded: dark-theme ? MaterialPalette.lime.m-700 : MaterialPalette.lime.m-300;
-    out property <brush> lime-bright: dark-theme ? MaterialPalette.lime.m-300 : MaterialPalette.lime.m-700;
-    out property <brush> lime-background: dark-theme ? MaterialPalette.lime.m-800 : MaterialPalette.lime.m-200;
-    out property <brush> lime-foreground: dark-theme ? MaterialPalette.lime.m-100 : MaterialPalette.lime.m-900;
-    out property <brush> lime-special: dark-theme ? MaterialPalette.lime.m-A700 : MaterialPalette.lime.m-A100;
-
-    out property <brush> yellow-normal: MaterialPalette.yellow.m;
-    out property <brush> yellow-faded: dark-theme ? MaterialPalette.yellow.m-700 : MaterialPalette.yellow.m-300;
-    out property <brush> yellow-bright: dark-theme ? MaterialPalette.yellow.m-300 : MaterialPalette.yellow.m-700;
-    out property <brush> yellow-background: dark-theme ? MaterialPalette.yellow.m-800 : MaterialPalette.yellow.m-200;
-    out property <brush> yellow-foreground: dark-theme ? MaterialPalette.yellow.m-100 : MaterialPalette.yellow.m-900;
-    out property <brush> yellow-special: dark-theme ? MaterialPalette.yellow.m-A700 : MaterialPalette.yellow.m-A100;
-
-    out property <brush> amber-normal: MaterialPalette.amber.m;
-    out property <brush> amber-faded: dark-theme ? MaterialPalette.amber.m-700 : MaterialPalette.amber.m-300;
-    out property <brush> amber-bright: dark-theme ? MaterialPalette.amber.m-300 : MaterialPalette.amber.m-700;
-    out property <brush> amber-background: dark-theme ? MaterialPalette.amber.m-800 : MaterialPalette.amber.m-200;
-    out property <brush> amber-foreground: dark-theme ? MaterialPalette.amber.m-100 : MaterialPalette.amber.m-900;
-    out property <brush> amber-special: dark-theme ? MaterialPalette.amber.m-A700 : MaterialPalette.amber.m-A100;
-
-    out property <brush> orange-normal: MaterialPalette.orange.m;
-    out property <brush> orange-faded: dark-theme ? MaterialPalette.orange.m-700 : MaterialPalette.orange.m-300;
-    out property <brush> orange-bright: dark-theme ? MaterialPalette.orange.m-300 : MaterialPalette.orange.m-700;
-    out property <brush> orange-background: dark-theme ? MaterialPalette.orange.m-800 : MaterialPalette.orange.m-200;
-    out property <brush> orange-foreground: dark-theme ? MaterialPalette.orange.m-100 : MaterialPalette.orange.m-900;
-    out property <brush> orange-special: dark-theme ? MaterialPalette.orange.m-A700 : MaterialPalette.orange.m-A100;
-
-    out property <brush> deepOrange-normal: MaterialPalette.deepOrange.m;
-    out property <brush> deepOrange-faded: dark-theme ? MaterialPalette.deepOrange.m-700 : MaterialPalette.deepOrange.m-300;
-    out property <brush> deepOrange-bright: dark-theme ? MaterialPalette.deepOrange.m-300 : MaterialPalette.deepOrange.m-700;
-    out property <brush> deepOrange-background: dark-theme ? MaterialPalette.deepOrange.m-800 : MaterialPalette.deepOrange.m-200;
-    out property <brush> deepOrange-foreground: dark-theme ? MaterialPalette.deepOrange.m-100 : MaterialPalette.deepOrange.m-900;
-    out property <brush> deepOrange-special: dark-theme ? MaterialPalette.deepOrange.m-A700 : MaterialPalette.deepOrange.m-A100;
-
-    out property <brush> brown-normal: MaterialPalette.brown.m;
-    out property <brush> brown-faded: dark-theme ? MaterialPalette.brown.m-700 : MaterialPalette.brown.m-300;
-    out property <brush> brown-bright: dark-theme ? MaterialPalette.brown.m-300 : MaterialPalette.brown.m-700;
-    out property <brush> brown-background: dark-theme ? MaterialPalette.brown.m-800 : MaterialPalette.brown.m-200;
-    out property <brush> brown-foreground: dark-theme ? MaterialPalette.brown.m-100 : MaterialPalette.brown.m-900;
-    out property <brush> brown-special: dark-theme ? MaterialPalette.brown.m-A700 : MaterialPalette.brown.m-A100;
-
-    out property <brush> grey-normal: MaterialPalette.grey.m;
-    out property <brush> grey-faded: dark-theme ? MaterialPalette.grey.m-700 : MaterialPalette.grey.m-300;
-    out property <brush> grey-bright: dark-theme ? MaterialPalette.grey.m-300 : MaterialPalette.grey.m-700;
-    out property <brush> grey-background: dark-theme ? MaterialPalette.grey.m-800 : MaterialPalette.grey.m-200;
-    out property <brush> grey-foreground: dark-theme ? MaterialPalette.grey.m-100 : MaterialPalette.grey.m-900;
-    out property <brush> grey-special: dark-theme ? MaterialPalette.grey.m-A700 : MaterialPalette.grey.m-A100;
-
-    out property <brush> blueGrey-normal: MaterialPalette.blueGrey.m;
-    out property <brush> blueGrey-faded: dark-theme ? MaterialPalette.blueGrey.m-700 : MaterialPalette.blueGrey.m-300;
-    out property <brush> blueGrey-bright: dark-theme ? MaterialPalette.blueGrey.m-300 : MaterialPalette.blueGrey.m-700;
-    out property <brush> blueGrey-background: dark-theme ? MaterialPalette.blueGrey.m-800 : MaterialPalette.blueGrey.m-200;
-    out property <brush> blueGrey-foreground: dark-theme ? MaterialPalette.blueGrey.m-100 : MaterialPalette.blueGrey.m-900;
-    out property <brush> blueGrey-special: dark-theme ? MaterialPalette.blueGrey.m-A700 : MaterialPalette.blueGrey.m-A100;
+    pure function scheme(name: string) -> AccentPalette {
+        if (name == "red") {
+            {
+                normal: MaterialPalette.red.m,
+                faded: dark-theme ? MaterialPalette.red.m-700 : MaterialPalette.red.m-300,
+                bright: dark-theme ? MaterialPalette.red.m-300 : MaterialPalette.red.m-700,
+                background: dark-theme ? MaterialPalette.red.m-800 : MaterialPalette.red.m-200,
+                foreground: dark-theme ? MaterialPalette.red.m-100 : MaterialPalette.red.m-900,
+                special: dark-theme ? MaterialPalette.red.m-A700 : MaterialPalette.red.m-A100,
+            }
+        } else if (name == "pink") {
+            {
+                normal: MaterialPalette.pink.m,
+                faded: dark-theme ? MaterialPalette.pink.m-700 : MaterialPalette.pink.m-300,
+                bright: dark-theme ? MaterialPalette.pink.m-300 : MaterialPalette.pink.m-700,
+                background: dark-theme ? MaterialPalette.pink.m-800 : MaterialPalette.pink.m-200,
+                foreground: dark-theme ? MaterialPalette.pink.m-100 : MaterialPalette.pink.m-900,
+                special: dark-theme ? MaterialPalette.pink.m-A700 : MaterialPalette.pink.m-A100,
+            }
+        } else if (name == "purple") {
+            {
+                normal: MaterialPalette.purple.m,
+                faded: dark-theme ? MaterialPalette.purple.m-700 : MaterialPalette.purple.m-300,
+                bright: dark-theme ? MaterialPalette.purple.m-300 : MaterialPalette.purple.m-700,
+                background: dark-theme ? MaterialPalette.purple.m-800 : MaterialPalette.purple.m-200,
+                foreground: dark-theme ? MaterialPalette.purple.m-100 : MaterialPalette.purple.m-900,
+                special: dark-theme ? MaterialPalette.purple.m-A700 : MaterialPalette.purple.m-A100,
+            }
+        } else if (name == "deepPurple") {
+            {
+                normal: MaterialPalette.deepPurple.m,
+                faded: dark-theme ? MaterialPalette.deepPurple.m-700 : MaterialPalette.deepPurple.m-300,
+                bright: dark-theme ? MaterialPalette.deepPurple.m-300 : MaterialPalette.deepPurple.m-700,
+                background: dark-theme ? MaterialPalette.deepPurple.m-800 : MaterialPalette.deepPurple.m-200,
+                foreground: dark-theme ? MaterialPalette.deepPurple.m-100 : MaterialPalette.deepPurple.m-900,
+                special: dark-theme ? MaterialPalette.deepPurple.m-A700 : MaterialPalette.deepPurple.m-A100,
+            }
+        } else if (name == "indigo") {
+            {
+                normal: MaterialPalette.indigo.m,
+                faded: dark-theme ? MaterialPalette.indigo.m-700 : MaterialPalette.indigo.m-300,
+                bright: dark-theme ? MaterialPalette.indigo.m-300 : MaterialPalette.indigo.m-700,
+                background: dark-theme ? MaterialPalette.indigo.m-800 : MaterialPalette.indigo.m-200,
+                foreground: dark-theme ? MaterialPalette.indigo.m-100 : MaterialPalette.indigo.m-900,
+                special: dark-theme ? MaterialPalette.indigo.m-A700 : MaterialPalette.indigo.m-A100,
+            }
+        } else if (name == "blue") {
+            {
+                normal: MaterialPalette.blue.m,
+                faded: dark-theme ? MaterialPalette.blue.m-700 : MaterialPalette.blue.m-300,
+                bright: dark-theme ? MaterialPalette.blue.m-300 : MaterialPalette.blue.m-700,
+                background: dark-theme ? MaterialPalette.blue.m-800 : MaterialPalette.blue.m-200,
+                foreground: dark-theme ? MaterialPalette.blue.m-100 : MaterialPalette.blue.m-900,
+                special: dark-theme ? MaterialPalette.blue.m-A700 : MaterialPalette.blue.m-A100,
+            }
+        } else if (name == "lightBlue") {
+            {
+                normal: MaterialPalette.lightBlue.m,
+                faded: dark-theme ? MaterialPalette.lightBlue.m-700 : MaterialPalette.lightBlue.m-300,
+                bright: dark-theme ? MaterialPalette.lightBlue.m-300 : MaterialPalette.lightBlue.m-700,
+                background: dark-theme ? MaterialPalette.lightBlue.m-800 : MaterialPalette.lightBlue.m-200,
+                foreground: dark-theme ? MaterialPalette.lightBlue.m-100 : MaterialPalette.lightBlue.m-900,
+                special: dark-theme ? MaterialPalette.lightBlue.m-A700 : MaterialPalette.lightBlue.m-A100,
+            }
+        } else if (name == "cyan") {
+            {
+                normal: MaterialPalette.cyan.m,
+                faded: dark-theme ? MaterialPalette.cyan.m-700 : MaterialPalette.cyan.m-300,
+                bright: dark-theme ? MaterialPalette.cyan.m-300 : MaterialPalette.cyan.m-700,
+                background: dark-theme ? MaterialPalette.cyan.m-800 : MaterialPalette.cyan.m-200,
+                foreground: dark-theme ? MaterialPalette.cyan.m-100 : MaterialPalette.cyan.m-900,
+                special: dark-theme ? MaterialPalette.cyan.m-A700 : MaterialPalette.cyan.m-A100,
+            }
+        } else if (name == "teal") {
+            {
+                normal: MaterialPalette.teal.m,
+                faded: dark-theme ? MaterialPalette.teal.m-700 : MaterialPalette.teal.m-300,
+                bright: dark-theme ? MaterialPalette.teal.m-300 : MaterialPalette.teal.m-700,
+                background: dark-theme ? MaterialPalette.teal.m-800 : MaterialPalette.teal.m-200,
+                foreground: dark-theme ? MaterialPalette.teal.m-100 : MaterialPalette.teal.m-900,
+                special: dark-theme ? MaterialPalette.teal.m-A700 : MaterialPalette.teal.m-A100,
+            }
+        } else if (name == "green") {
+            {
+                normal: MaterialPalette.green.m,
+                faded: dark-theme ? MaterialPalette.green.m-700 : MaterialPalette.green.m-300,
+                bright: dark-theme ? MaterialPalette.green.m-300 : MaterialPalette.green.m-700,
+                background: dark-theme ? MaterialPalette.green.m-800 : MaterialPalette.green.m-200,
+                foreground: dark-theme ? MaterialPalette.green.m-100 : MaterialPalette.green.m-900,
+                special: dark-theme ? MaterialPalette.green.m-A700 : MaterialPalette.green.m-A100,
+            }
+        } else if (name == "lightGreen") {
+            {
+                normal: MaterialPalette.lightGreen.m,
+                faded: dark-theme ? MaterialPalette.lightGreen.m-700 : MaterialPalette.lightGreen.m-300,
+                bright: dark-theme ? MaterialPalette.lightGreen.m-300 : MaterialPalette.lightGreen.m-700,
+                background: dark-theme ? MaterialPalette.lightGreen.m-800 : MaterialPalette.lightGreen.m-200,
+                foreground: dark-theme ? MaterialPalette.lightGreen.m-100 : MaterialPalette.lightGreen.m-900,
+                special: dark-theme ? MaterialPalette.lightGreen.m-A700 : MaterialPalette.lightGreen.m-A100,
+            }
+        } else if (name == "lime") {
+            {
+                normal: MaterialPalette.lime.m,
+                faded: dark-theme ? MaterialPalette.lime.m-700 : MaterialPalette.lime.m-300,
+                bright: dark-theme ? MaterialPalette.lime.m-300 : MaterialPalette.lime.m-700,
+                background: dark-theme ? MaterialPalette.lime.m-800 : MaterialPalette.lime.m-200,
+                foreground: dark-theme ? MaterialPalette.lime.m-100 : MaterialPalette.lime.m-900,
+                special: dark-theme ? MaterialPalette.lime.m-A700 : MaterialPalette.lime.m-A100,
+            }
+        } else if (name == "yellow") {
+            {
+                normal: MaterialPalette.yellow.m,
+                faded: dark-theme ? MaterialPalette.yellow.m-700 : MaterialPalette.yellow.m-300,
+                bright: dark-theme ? MaterialPalette.yellow.m-300 : MaterialPalette.yellow.m-700,
+                background: dark-theme ? MaterialPalette.yellow.m-800 : MaterialPalette.yellow.m-200,
+                foreground: dark-theme ? MaterialPalette.yellow.m-100 : MaterialPalette.yellow.m-900,
+                special: dark-theme ? MaterialPalette.yellow.m-A700 : MaterialPalette.yellow.m-A100,
+            }
+        } else if (name == "amber") {
+            {
+                normal: MaterialPalette.amber.m,
+                faded: dark-theme ? MaterialPalette.amber.m-700 : MaterialPalette.amber.m-300,
+                bright: dark-theme ? MaterialPalette.amber.m-300 : MaterialPalette.amber.m-700,
+                background: dark-theme ? MaterialPalette.amber.m-800 : MaterialPalette.amber.m-200,
+                foreground: dark-theme ? MaterialPalette.amber.m-100 : MaterialPalette.amber.m-900,
+                special: dark-theme ? MaterialPalette.amber.m-A700 : MaterialPalette.amber.m-A100,
+            }
+        } else if (name == "orange") {
+            {
+                normal: MaterialPalette.orange.m,
+                faded: dark-theme ? MaterialPalette.orange.m-700 : MaterialPalette.orange.m-300,
+                bright: dark-theme ? MaterialPalette.orange.m-300 : MaterialPalette.orange.m-700,
+                background: dark-theme ? MaterialPalette.orange.m-800 : MaterialPalette.orange.m-200,
+                foreground: dark-theme ? MaterialPalette.orange.m-100 : MaterialPalette.orange.m-900,
+                special: dark-theme ? MaterialPalette.orange.m-A700 : MaterialPalette.orange.m-A100,
+            }
+        } else if (name == "deepOrange") {
+            {
+                normal: MaterialPalette.deepOrange.m,
+                faded: dark-theme ? MaterialPalette.deepOrange.m-700 : MaterialPalette.deepOrange.m-300,
+                bright: dark-theme ? MaterialPalette.deepOrange.m-300 : MaterialPalette.deepOrange.m-700,
+                background: dark-theme ? MaterialPalette.deepOrange.m-800 : MaterialPalette.deepOrange.m-200,
+                foreground: dark-theme ? MaterialPalette.deepOrange.m-100 : MaterialPalette.deepOrange.m-900,
+                special: dark-theme ? MaterialPalette.deepOrange.m-A700 : MaterialPalette.deepOrange.m-A100,
+            }
+        } else if (name == "brown") {
+            {
+                normal: MaterialPalette.brown.m,
+                faded: dark-theme ? MaterialPalette.brown.m-700 : MaterialPalette.brown.m-300,
+                bright: dark-theme ? MaterialPalette.brown.m-300 : MaterialPalette.brown.m-700,
+                background: dark-theme ? MaterialPalette.brown.m-800 : MaterialPalette.brown.m-200,
+                foreground: dark-theme ? MaterialPalette.brown.m-100 : MaterialPalette.brown.m-900,
+                special: dark-theme ? MaterialPalette.brown.m-A700 : MaterialPalette.brown.m-A100,
+            }
+        } else if (name == "grey") {
+            {
+                normal: MaterialPalette.grey.m,
+                faded: dark-theme ? MaterialPalette.grey.m-700 : MaterialPalette.grey.m-300,
+                bright: dark-theme ? MaterialPalette.grey.m-300 : MaterialPalette.grey.m-700,
+                background: dark-theme ? MaterialPalette.grey.m-800 : MaterialPalette.grey.m-200,
+                foreground: dark-theme ? MaterialPalette.grey.m-100 : MaterialPalette.grey.m-900,
+                special: dark-theme ? MaterialPalette.grey.m-A700 : MaterialPalette.grey.m-A100,
+            }
+        } else if (name == "blueGrey") {
+            {
+                normal: MaterialPalette.blueGrey.m,
+                faded: dark-theme ? MaterialPalette.blueGrey.m-700 : MaterialPalette.blueGrey.m-300,
+                bright: dark-theme ? MaterialPalette.blueGrey.m-300 : MaterialPalette.blueGrey.m-700,
+                background: dark-theme ? MaterialPalette.blueGrey.m-800 : MaterialPalette.blueGrey.m-200,
+                foreground: dark-theme ? MaterialPalette.blueGrey.m-100 : MaterialPalette.blueGrey.m-900,
+                special: dark-theme ? MaterialPalette.blueGrey.m-A700 : MaterialPalette.blueGrey.m-A100,
+            }
+        } else {
+            {
+                normal: #FF0000,
+                faded: #00FFFF,
+                bright: #FF00FF,
+                background: #000000,
+                foreground: #FFFFFF,
+                special: #B00BE5
+            }
+        }
+    }
 }
 
