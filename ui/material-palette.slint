@@ -1,443 +1,499 @@
+export struct MaterialVariants {
+    m: brush,
+    m-50: brush,
+    m-100: brush,
+    m-200: brush,
+    m-300: brush,
+    m-400: brush,
+    m-500: brush,
+    m-600: brush,
+    m-700: brush,
+    m-800: brush,
+    m-900: brush,
+    m-A100: brush,
+    m-A200: brush,
+    m-A400: brush,
+    m-A700: brush,
+}
+
 export global MaterialPalette {
-    out property <brush> red: #f44336;
-    out property <brush> red-50: #ffebee;
-    out property <brush> red-100: #ffcdd2;
-    out property <brush> red-200: #ef9a9a;
-    out property <brush> red-300: #e57373;
-    out property <brush> red-400: #ef5350;
-    out property <brush> red-500: #f44336;
-    out property <brush> red-600: #e53935;
-    out property <brush> red-700: #d32f2f;
-    out property <brush> red-800: #c62828;
-    out property <brush> red-900: #b71c1c;
-    out property <brush> red-A100: #ff8a80;
-    out property <brush> red-A200: #ff5252;
-    out property <brush> red-A400: #ff1744;
-    out property <brush> red-A700: #d50000;
+    out property <MaterialVariants> red: {
+        m: #f44336,
+        m-50: #ffebee,
+        m-100: #ffcdd2,
+        m-200: #ef9a9a,
+        m-300: #e57373,
+        m-400: #ef5350,
+        m-500: #f44336,
+        m-600: #e53935,
+        m-700: #d32f2f,
+        m-800: #c62828,
+        m-900: #b71c1c,
+        m-A100: #ff8a80,
+        m-A200: #ff5252,
+        m-A400: #ff1744,
+        m-A700: #d50000,
+    };
 
-    out property <brush> pink: #e91e63;
-    out property <brush> pink-50: #fce4ec;
-    out property <brush> pink-100: #f8bbd0;
-    out property <brush> pink-200: #f48fb1;
-    out property <brush> pink-300: #f06292;
-    out property <brush> pink-400: #ec407a;
-    out property <brush> pink-500: #e91e63;
-    out property <brush> pink-600: #d81b60;
-    out property <brush> pink-700: #c2185b;
-    out property <brush> pink-800: #ad1457;
-    out property <brush> pink-900: #880e4f;
-    out property <brush> pink-A100: #ff80ab;
-    out property <brush> pink-A200: #ff4081;
-    out property <brush> pink-A400: #f50057;
-    out property <brush> pink-A700: #c51162;
+    out property <MaterialVariants> pink: {
+        m: #e91e63,
+        m-50: #fce4ec,
+        m-100: #f8bbd0,
+        m-200: #f48fb1,
+        m-300: #f06292,
+        m-400: #ec407a,
+        m-500: #e91e63,
+        m-600: #d81b60,
+        m-700: #c2185b,
+        m-800: #ad1457,
+        m-900: #880e4f,
+        m-A100: #ff80ab,
+        m-A200: #ff4081,
+        m-A400: #f50057,
+        m-A700: #c51162,
+    };
 
-    out property <brush> purple: #9c27b0;
-    out property <brush> purple-50: #f3e5f5;
-    out property <brush> purple-100: #e1bee7;
-    out property <brush> purple-200: #ce93d8;
-    out property <brush> purple-300: #ba68c8;
-    out property <brush> purple-400: #ab47bc;
-    out property <brush> purple-500: #9c27b0;
-    out property <brush> purple-600: #8e24aa;
-    out property <brush> purple-700: #7b1fa2;
-    out property <brush> purple-800: #6a1b9a;
-    out property <brush> purple-900: #4a148c;
-    out property <brush> purple-A100: #ea80fc;
-    out property <brush> purple-A200: #e040fb;
-    out property <brush> purple-A400: #d500f9;
-    out property <brush> purple-A700: #aa00ff;
+    out property <MaterialVariants> purple: {
+        m: #9c27b0,
+        m-50: #f3e5f5,
+        m-100: #e1bee7,
+        m-200: #ce93d8,
+        m-300: #ba68c8,
+        m-400: #ab47bc,
+        m-500: #9c27b0,
+        m-600: #8e24aa,
+        m-700: #7b1fa2,
+        m-800: #6a1b9a,
+        m-900: #4a148c,
+        m-A100: #ea80fc,
+        m-A200: #e040fb,
+        m-A400: #d500f9,
+        m-A700: #aa00ff,
+    };
 
-    out property <brush> deepPurple: #673ab7;
-    out property <brush> deepPurple-50: #ede7f6;
-    out property <brush> deepPurple-100: #d1c4e9;
-    out property <brush> deepPurple-200: #b39ddb;
-    out property <brush> deepPurple-300: #9575cd;
-    out property <brush> deepPurple-400: #7e57c2;
-    out property <brush> deepPurple-500: #673ab7;
-    out property <brush> deepPurple-600: #5e35b1;
-    out property <brush> deepPurple-700: #512da8;
-    out property <brush> deepPurple-800: #4527a0;
-    out property <brush> deepPurple-900: #311b92;
-    out property <brush> deepPurple-A100: #b388ff;
-    out property <brush> deepPurple-A200: #7c4dff;
-    out property <brush> deepPurple-A400: #651fff;
-    out property <brush> deepPurple-A700: #6200ea;
+    out property <MaterialVariants> deepPurple: {
+        m: #673ab7,
+        m-50: #ede7f6,
+        m-100: #d1c4e9,
+        m-200: #b39ddb,
+        m-300: #9575cd,
+        m-400: #7e57c2,
+        m-500: #673ab7,
+        m-600: #5e35b1,
+        m-700: #512da8,
+        m-800: #4527a0,
+        m-900: #311b92,
+        m-A100: #b388ff,
+        m-A200: #7c4dff,
+        m-A400: #651fff,
+        m-A700: #6200ea,
+    };
 
-    out property <brush> indigo: #3f51b5;
-    out property <brush> indigo-50: #e8eaf6;
-    out property <brush> indigo-100: #c5cae9;
-    out property <brush> indigo-200: #9fa8da;
-    out property <brush> indigo-300: #7986cb;
-    out property <brush> indigo-400: #5c6bc0;
-    out property <brush> indigo-500: #3f51b5;
-    out property <brush> indigo-600: #3949ab;
-    out property <brush> indigo-700: #303f9f;
-    out property <brush> indigo-800: #283593;
-    out property <brush> indigo-900: #1a237e;
-    out property <brush> indigo-A100: #8c9eff;
-    out property <brush> indigo-A200: #536dfe;
-    out property <brush> indigo-A400: #3d5afe;
-    out property <brush> indigo-A700: #304ffe;
+    out property <MaterialVariants> indigo: {
+        m: #3f51b5,
+        m-50: #e8eaf6,
+        m-100: #c5cae9,
+        m-200: #9fa8da,
+        m-300: #7986cb,
+        m-400: #5c6bc0,
+        m-500: #3f51b5,
+        m-600: #3949ab,
+        m-700: #303f9f,
+        m-800: #283593,
+        m-900: #1a237e,
+        m-A100: #8c9eff,
+        m-A200: #536dfe,
+        m-A400: #3d5afe,
+        m-A700: #304ffe,
+    };
 
-    out property <brush> blue: #2196f3;
-    out property <brush> blue-50: #e3f2fd;
-    out property <brush> blue-100: #bbdefb;
-    out property <brush> blue-200: #90caf9;
-    out property <brush> blue-300: #64b5f6;
-    out property <brush> blue-400: #42a5f5;
-    out property <brush> blue-500: #2196f3;
-    out property <brush> blue-600: #1e88e5;
-    out property <brush> blue-700: #1976d2;
-    out property <brush> blue-800: #1565c0;
-    out property <brush> blue-900: #0d47a1;
-    out property <brush> blue-A100: #82b1ff;
-    out property <brush> blue-A200: #448aff;
-    out property <brush> blue-A400: #2979ff;
-    out property <brush> blue-A700: #2962ff;
+    out property <MaterialVariants> blue: {
+        m: #2196f3,
+        m-50: #e3f2fd,
+        m-100: #bbdefb,
+        m-200: #90caf9,
+        m-300: #64b5f6,
+        m-400: #42a5f5,
+        m-500: #2196f3,
+        m-600: #1e88e5,
+        m-700: #1976d2,
+        m-800: #1565c0,
+        m-900: #0d47a1,
+        m-A100: #82b1ff,
+        m-A200: #448aff,
+        m-A400: #2979ff,
+        m-A700: #2962ff,
+    };
 
-    out property <brush> lightBlue: #03a9f4;
-    out property <brush> lightBlue-50: #e1f5fe;
-    out property <brush> lightBlue-100: #b3e5fc;
-    out property <brush> lightBlue-200: #81d4fa;
-    out property <brush> lightBlue-300: #4fc3f7;
-    out property <brush> lightBlue-400: #29b6f6;
-    out property <brush> lightBlue-500: #03a9f4;
-    out property <brush> lightBlue-600: #039be5;
-    out property <brush> lightBlue-700: #0288d1;
-    out property <brush> lightBlue-800: #0277bd;
-    out property <brush> lightBlue-900: #01579b;
-    out property <brush> lightBlue-A100: #80d8ff;
-    out property <brush> lightBlue-A200: #40c4ff;
-    out property <brush> lightBlue-A400: #00b0ff;
-    out property <brush> lightBlue-A700: #0091ea;
+    out property <MaterialVariants> lightBlue: {
+        m: #03a9f4,
+        m-50: #e1f5fe,
+        m-100: #b3e5fc,
+        m-200: #81d4fa,
+        m-300: #4fc3f7,
+        m-400: #29b6f6,
+        m-500: #03a9f4,
+        m-600: #039be5,
+        m-700: #0288d1,
+        m-800: #0277bd,
+        m-900: #01579b,
+        m-A100: #80d8ff,
+        m-A200: #40c4ff,
+        m-A400: #00b0ff,
+        m-A700: #0091ea,
+    };
 
-    out property <brush> cyan: #00bcd4;
-    out property <brush> cyan-50: #e0f7fa;
-    out property <brush> cyan-100: #b2ebf2;
-    out property <brush> cyan-200: #80deea;
-    out property <brush> cyan-300: #4dd0e1;
-    out property <brush> cyan-400: #26c6da;
-    out property <brush> cyan-500: #00bcd4;
-    out property <brush> cyan-600: #00acc1;
-    out property <brush> cyan-700: #0097a7;
-    out property <brush> cyan-800: #00838f;
-    out property <brush> cyan-900: #006064;
-    out property <brush> cyan-A100: #84ffff;
-    out property <brush> cyan-A200: #18ffff;
-    out property <brush> cyan-A400: #00e5ff;
-    out property <brush> cyan-A700: #00b8d4;
+    out property <MaterialVariants> cyan: {
+        m: #00bcd4,
+        m-50: #e0f7fa,
+        m-100: #b2ebf2,
+        m-200: #80deea,
+        m-300: #4dd0e1,
+        m-400: #26c6da,
+        m-500: #00bcd4,
+        m-600: #00acc1,
+        m-700: #0097a7,
+        m-800: #00838f,
+        m-900: #006064,
+        m-A100: #84ffff,
+        m-A200: #18ffff,
+        m-A400: #00e5ff,
+        m-A700: #00b8d4,
+    };
 
-    out property <brush> teal: #009688;
-    out property <brush> teal-50: #e0f2f1;
-    out property <brush> teal-100: #b2dfdb;
-    out property <brush> teal-200: #80cbc4;
-    out property <brush> teal-300: #4db6ac;
-    out property <brush> teal-400: #26a69a;
-    out property <brush> teal-500: #009688;
-    out property <brush> teal-600: #00897b;
-    out property <brush> teal-700: #00796b;
-    out property <brush> teal-800: #00695c;
-    out property <brush> teal-900: #004d40;
-    out property <brush> teal-A100: #a7ffeb;
-    out property <brush> teal-A200: #64ffda;
-    out property <brush> teal-A400: #1de9b6;
-    out property <brush> teal-A700: #00bfa5;
+    out property <MaterialVariants> teal: {
+        m: #009688,
+        m-50: #e0f2f1,
+        m-100: #b2dfdb,
+        m-200: #80cbc4,
+        m-300: #4db6ac,
+        m-400: #26a69a,
+        m-500: #009688,
+        m-600: #00897b,
+        m-700: #00796b,
+        m-800: #00695c,
+        m-900: #004d40,
+        m-A100: #a7ffeb,
+        m-A200: #64ffda,
+        m-A400: #1de9b6,
+        m-A700: #00bfa5,
+    };
 
-    out property <brush> green: #4caf50;
-    out property <brush> green-50: #e8f5e9;
-    out property <brush> green-100: #c8e6c9;
-    out property <brush> green-200: #a5d6a7;
-    out property <brush> green-300: #81c784;
-    out property <brush> green-400: #66bb6a;
-    out property <brush> green-500: #4caf50;
-    out property <brush> green-600: #43a047;
-    out property <brush> green-700: #388e3c;
-    out property <brush> green-800: #2e7d32;
-    out property <brush> green-900: #1b5e20;
-    out property <brush> green-A100: #b9f6ca;
-    out property <brush> green-A200: #69f0ae;
-    out property <brush> green-A400: #00e676;
-    out property <brush> green-A700: #00c853;
+    out property <MaterialVariants> green: {
+        m: #4caf50,
+        m-50: #e8f5e9,
+        m-100: #c8e6c9,
+        m-200: #a5d6a7,
+        m-300: #81c784,
+        m-400: #66bb6a,
+        m-500: #4caf50,
+        m-600: #43a047,
+        m-700: #388e3c,
+        m-800: #2e7d32,
+        m-900: #1b5e20,
+        m-A100: #b9f6ca,
+        m-A200: #69f0ae,
+        m-A400: #00e676,
+        m-A700: #00c853,
+    };
 
-    out property <brush> lightGreen: #8bc34a;
-    out property <brush> lightGreen-50: #f1f8e9;
-    out property <brush> lightGreen-100: #dcedc8;
-    out property <brush> lightGreen-200: #c5e1a5;
-    out property <brush> lightGreen-300: #aed581;
-    out property <brush> lightGreen-400: #9ccc65;
-    out property <brush> lightGreen-500: #8bc34a;
-    out property <brush> lightGreen-600: #7cb342;
-    out property <brush> lightGreen-700: #689f38;
-    out property <brush> lightGreen-800: #558b2f;
-    out property <brush> lightGreen-900: #33691e;
-    out property <brush> lightGreen-A100: #ccff90;
-    out property <brush> lightGreen-A200: #b2ff59;
-    out property <brush> lightGreen-A400: #76ff03;
-    out property <brush> lightGreen-A700: #64dd17;
+    out property <MaterialVariants> lightGreen: {
+        m: #8bc34a,
+        m-50: #f1f8e9,
+        m-100: #dcedc8,
+        m-200: #c5e1a5,
+        m-300: #aed581,
+        m-400: #9ccc65,
+        m-500: #8bc34a,
+        m-600: #7cb342,
+        m-700: #689f38,
+        m-800: #558b2f,
+        m-900: #33691e,
+        m-A100: #ccff90,
+        m-A200: #b2ff59,
+        m-A400: #76ff03,
+        m-A700: #64dd17,
+    };
 
-    out property <brush> lime: #cddc39;
-    out property <brush> lime-50: #f9fbe7;
-    out property <brush> lime-100: #f0f4c3;
-    out property <brush> lime-200: #e6ee9c;
-    out property <brush> lime-300: #dce775;
-    out property <brush> lime-400: #d4e157;
-    out property <brush> lime-500: #cddc39;
-    out property <brush> lime-600: #c0ca33;
-    out property <brush> lime-700: #afb42b;
-    out property <brush> lime-800: #9e9d24;
-    out property <brush> lime-900: #827717;
-    out property <brush> lime-A100: #f4ff81;
-    out property <brush> lime-A200: #eeff41;
-    out property <brush> lime-A400: #c6ff00;
-    out property <brush> lime-A700: #aeea00;
+    out property <MaterialVariants> lime: {
+        m: #cddc39,
+        m-50: #f9fbe7,
+        m-100: #f0f4c3,
+        m-200: #e6ee9c,
+        m-300: #dce775,
+        m-400: #d4e157,
+        m-500: #cddc39,
+        m-600: #c0ca33,
+        m-700: #afb42b,
+        m-800: #9e9d24,
+        m-900: #827717,
+        m-A100: #f4ff81,
+        m-A200: #eeff41,
+        m-A400: #c6ff00,
+        m-A700: #aeea00,
+    };
 
-    out property <brush> yellow: #ffeb3b;
-    out property <brush> yellow-50: #fffde7;
-    out property <brush> yellow-100: #fff9c4;
-    out property <brush> yellow-200: #fff59d;
-    out property <brush> yellow-300: #fff176;
-    out property <brush> yellow-400: #ffee58;
-    out property <brush> yellow-500: #ffeb3b;
-    out property <brush> yellow-600: #fdd835;
-    out property <brush> yellow-700: #fbc02d;
-    out property <brush> yellow-800: #f9a825;
-    out property <brush> yellow-900: #f57f17;
-    out property <brush> yellow-A100: #ffff8d;
-    out property <brush> yellow-A200: #ffff00;
-    out property <brush> yellow-A400: #ffea00;
-    out property <brush> yellow-A700: #ffd600;
+    out property <MaterialVariants> yellow: {
+        m: #ffeb3b,
+        m-50: #fffde7,
+        m-100: #fff9c4,
+        m-200: #fff59d,
+        m-300: #fff176,
+        m-400: #ffee58,
+        m-500: #ffeb3b,
+        m-600: #fdd835,
+        m-700: #fbc02d,
+        m-800: #f9a825,
+        m-900: #f57f17,
+        m-A100: #ffff8d,
+        m-A200: #ffff00,
+        m-A400: #ffea00,
+        m-A700: #ffd600,
+    };
 
-    out property <brush> amber: #ffc107;
-    out property <brush> amber-50: #fff8e1;
-    out property <brush> amber-100: #ffecb3;
-    out property <brush> amber-200: #ffe082;
-    out property <brush> amber-300: #ffd54f;
-    out property <brush> amber-400: #ffca28;
-    out property <brush> amber-500: #ffc107;
-    out property <brush> amber-600: #ffb300;
-    out property <brush> amber-700: #ffa000;
-    out property <brush> amber-800: #ff8f00;
-    out property <brush> amber-900: #ff6f00;
-    out property <brush> amber-A100: #ffe57f;
-    out property <brush> amber-A200: #ffd740;
-    out property <brush> amber-A400: #ffc400;
-    out property <brush> amber-A700: #ffab00;
+    out property <MaterialVariants> amber: {
+        m: #ffc107,
+        m-50: #fff8e1,
+        m-100: #ffecb3,
+        m-200: #ffe082,
+        m-300: #ffd54f,
+        m-400: #ffca28,
+        m-500: #ffc107,
+        m-600: #ffb300,
+        m-700: #ffa000,
+        m-800: #ff8f00,
+        m-900: #ff6f00,
+        m-A100: #ffe57f,
+        m-A200: #ffd740,
+        m-A400: #ffc400,
+        m-A700: #ffab00,
+    };
 
-    out property <brush> orange: #ff9800;
-    out property <brush> orange-50: #fff3e0;
-    out property <brush> orange-100: #ffe0b2;
-    out property <brush> orange-200: #ffcc80;
-    out property <brush> orange-300: #ffb74d;
-    out property <brush> orange-400: #ffa726;
-    out property <brush> orange-500: #ff9800;
-    out property <brush> orange-600: #fb8c00;
-    out property <brush> orange-700: #f57c00;
-    out property <brush> orange-800: #ef6c00;
-    out property <brush> orange-900: #e65100;
-    out property <brush> orange-A100: #ffd180;
-    out property <brush> orange-A200: #ffab40;
-    out property <brush> orange-A400: #ff9100;
-    out property <brush> orange-A700: #ff6d00;
+    out property <MaterialVariants> orange: {
+        m: #ff9800,
+        m-50: #fff3e0,
+        m-100: #ffe0b2,
+        m-200: #ffcc80,
+        m-300: #ffb74d,
+        m-400: #ffa726,
+        m-500: #ff9800,
+        m-600: #fb8c00,
+        m-700: #f57c00,
+        m-800: #ef6c00,
+        m-900: #e65100,
+        m-A100: #ffd180,
+        m-A200: #ffab40,
+        m-A400: #ff9100,
+        m-A700: #ff6d00,
+    };
 
-    out property <brush> deepOrange: #ff5722;
-    out property <brush> deepOrange-50: #fbe9e7;
-    out property <brush> deepOrange-100: #ffccbc;
-    out property <brush> deepOrange-200: #ffab91;
-    out property <brush> deepOrange-300: #ff8a65;
-    out property <brush> deepOrange-400: #ff7043;
-    out property <brush> deepOrange-500: #ff5722;
-    out property <brush> deepOrange-600: #f4511e;
-    out property <brush> deepOrange-700: #e64a19;
-    out property <brush> deepOrange-800: #d84315;
-    out property <brush> deepOrange-900: #bf360c;
-    out property <brush> deepOrange-A100: #ff9e80;
-    out property <brush> deepOrange-A200: #ff6e40;
-    out property <brush> deepOrange-A400: #ff3d00;
-    out property <brush> deepOrange-A700: #dd2c00;
+    out property <MaterialVariants> deepOrange: {
+        m: #ff5722,
+        m-50: #fbe9e7,
+        m-100: #ffccbc,
+        m-200: #ffab91,
+        m-300: #ff8a65,
+        m-400: #ff7043,
+        m-500: #ff5722,
+        m-600: #f4511e,
+        m-700: #e64a19,
+        m-800: #d84315,
+        m-900: #bf360c,
+        m-A100: #ff9e80,
+        m-A200: #ff6e40,
+        m-A400: #ff3d00,
+        m-A700: #dd2c00,
+    };
 
-    out property <brush> brown: #795548;
-    out property <brush> brown-50: #efebe9;
-    out property <brush> brown-100: #d7ccc8;
-    out property <brush> brown-200: #bcaaa4;
-    out property <brush> brown-300: #a1887f;
-    out property <brush> brown-400: #8d6e63;
-    out property <brush> brown-500: #795548;
-    out property <brush> brown-600: #6d4c41;
-    out property <brush> brown-700: #5d4037;
-    out property <brush> brown-800: #4e342e;
-    out property <brush> brown-900: #3e2723;
-    out property <brush> brown-A100: #d7ccc8;
-    out property <brush> brown-A200: #bcaaa4;
-    out property <brush> brown-A400: #8d6e63;
-    out property <brush> brown-A700: #5d4037;
+    out property <MaterialVariants> brown: {
+        m: #795548,
+        m-50: #efebe9,
+        m-100: #d7ccc8,
+        m-200: #bcaaa4,
+        m-300: #a1887f,
+        m-400: #8d6e63,
+        m-500: #795548,
+        m-600: #6d4c41,
+        m-700: #5d4037,
+        m-800: #4e342e,
+        m-900: #3e2723,
+        m-A100: #d7ccc8,
+        m-A200: #bcaaa4,
+        m-A400: #8d6e63,
+        m-A700: #5d4037,
+    };
 
-    out property <brush> grey: #9e9e9e;
-    out property <brush> grey-50: #fafafa;
-    out property <brush> grey-100: #f5f5f5;
-    out property <brush> grey-200: #eeeeee;
-    out property <brush> grey-300: #e0e0e0;
-    out property <brush> grey-400: #bdbdbd;
-    out property <brush> grey-500: #9e9e9e;
-    out property <brush> grey-600: #757575;
-    out property <brush> grey-700: #616161;
-    out property <brush> grey-800: #424242;
-    out property <brush> grey-900: #212121;
-    out property <brush> grey-A100: #f5f5f5;
-    out property <brush> grey-A200: #eeeeee;
-    out property <brush> grey-A400: #bdbdbd;
-    out property <brush> grey-A700: #616161;
+    out property <MaterialVariants> grey: {
+        m: #9e9e9e,
+        m-50: #fafafa,
+        m-100: #f5f5f5,
+        m-200: #eeeeee,
+        m-300: #e0e0e0,
+        m-400: #bdbdbd,
+        m-500: #9e9e9e,
+        m-600: #757575,
+        m-700: #616161,
+        m-800: #424242,
+        m-900: #212121,
+        m-A100: #f5f5f5,
+        m-A200: #eeeeee,
+        m-A400: #bdbdbd,
+        m-A700: #616161,
+    };
 
-    out property <brush> blueGrey: #607d8b;
-    out property <brush> blueGrey-50: #eceff1;
-    out property <brush> blueGrey-100: #cfd8dc;
-    out property <brush> blueGrey-200: #b0bec5;
-    out property <brush> blueGrey-300: #90a4ae;
-    out property <brush> blueGrey-400: #78909c;
-    out property <brush> blueGrey-500: #607d8b;
-    out property <brush> blueGrey-600: #546e7a;
-    out property <brush> blueGrey-700: #455a64;
-    out property <brush> blueGrey-800: #37474f;
-    out property <brush> blueGrey-900: #263238;
-    out property <brush> blueGrey-A100: #cfd8dc;
-    out property <brush> blueGrey-A200: #b0bec5;
-    out property <brush> blueGrey-A400: #78909c;
-    out property <brush> blueGrey-A700: #455a64;
+    out property <MaterialVariants> blueGrey: {
+        m: #607d8b,
+        m-50: #eceff1,
+        m-100: #cfd8dc,
+        m-200: #b0bec5,
+        m-300: #90a4ae,
+        m-400: #78909c,
+        m-500: #607d8b,
+        m-600: #546e7a,
+        m-700: #455a64,
+        m-800: #37474f,
+        m-900: #263238,
+        m-A100: #cfd8dc,
+        m-A200: #b0bec5,
+        m-A400: #78909c,
+        m-A700: #455a64,
+    };
 }
 
 export global MaterialScheme {
     in-out property <bool> dark-theme;
 
-    out property <brush> red-normal: MaterialPalette.red;
-    out property <brush> red-faded: dark-theme ? MaterialPalette.red-700 : MaterialPalette.red-300;
-    out property <brush> red-bright: dark-theme ? MaterialPalette.red-300 : MaterialPalette.red-700;
-    out property <brush> red-background: dark-theme ? MaterialPalette.red-800 : MaterialPalette.red-200;
-    out property <brush> red-foreground: dark-theme ? MaterialPalette.red-100 : MaterialPalette.red-900;
-    out property <brush> red-special: dark-theme ? MaterialPalette.red-A700 : MaterialPalette.red-A100;
+    out property <brush> red-normal: MaterialPalette.red.m;
+    out property <brush> red-faded: dark-theme ? MaterialPalette.red.m-700 : MaterialPalette.red.m-300;
+    out property <brush> red-bright: dark-theme ? MaterialPalette.red.m-300 : MaterialPalette.red.m-700;
+    out property <brush> red-background: dark-theme ? MaterialPalette.red.m-800 : MaterialPalette.red.m-200;
+    out property <brush> red-foreground: dark-theme ? MaterialPalette.red.m-100 : MaterialPalette.red.m-900;
+    out property <brush> red-special: dark-theme ? MaterialPalette.red.m-A700 : MaterialPalette.red.m-A100;
 
-    out property <brush> pink-normal: MaterialPalette.pink;
-    out property <brush> pink-faded: dark-theme ? MaterialPalette.pink-700 : MaterialPalette.pink-300;
-    out property <brush> pink-bright: dark-theme ? MaterialPalette.pink-300 : MaterialPalette.pink-700;
-    out property <brush> pink-background: dark-theme ? MaterialPalette.pink-800 : MaterialPalette.pink-200;
-    out property <brush> pink-foreground: dark-theme ? MaterialPalette.pink-100 : MaterialPalette.pink-900;
-    out property <brush> pink-special: dark-theme ? MaterialPalette.pink-A700 : MaterialPalette.pink-A100;
+    out property <brush> pink-normal: MaterialPalette.pink.m;
+    out property <brush> pink-faded: dark-theme ? MaterialPalette.pink.m-700 : MaterialPalette.pink.m-300;
+    out property <brush> pink-bright: dark-theme ? MaterialPalette.pink.m-300 : MaterialPalette.pink.m-700;
+    out property <brush> pink-background: dark-theme ? MaterialPalette.pink.m-800 : MaterialPalette.pink.m-200;
+    out property <brush> pink-foreground: dark-theme ? MaterialPalette.pink.m-100 : MaterialPalette.pink.m-900;
+    out property <brush> pink-special: dark-theme ? MaterialPalette.pink.m-A700 : MaterialPalette.pink.m-A100;
 
-    out property <brush> purple-normal: MaterialPalette.purple;
-    out property <brush> purple-faded: dark-theme ? MaterialPalette.purple-700 : MaterialPalette.purple-300;
-    out property <brush> purple-bright: dark-theme ? MaterialPalette.purple-300 : MaterialPalette.purple-700;
-    out property <brush> purple-background: dark-theme ? MaterialPalette.purple-800 : MaterialPalette.purple-200;
-    out property <brush> purple-foreground: dark-theme ? MaterialPalette.purple-100 : MaterialPalette.purple-900;
-    out property <brush> purple-special: dark-theme ? MaterialPalette.purple-A700 : MaterialPalette.purple-A100;
+    out property <brush> purple-normal: MaterialPalette.purple.m;
+    out property <brush> purple-faded: dark-theme ? MaterialPalette.purple.m-700 : MaterialPalette.purple.m-300;
+    out property <brush> purple-bright: dark-theme ? MaterialPalette.purple.m-300 : MaterialPalette.purple.m-700;
+    out property <brush> purple-background: dark-theme ? MaterialPalette.purple.m-800 : MaterialPalette.purple.m-200;
+    out property <brush> purple-foreground: dark-theme ? MaterialPalette.purple.m-100 : MaterialPalette.purple.m-900;
+    out property <brush> purple-special: dark-theme ? MaterialPalette.purple.m-A700 : MaterialPalette.purple.m-A100;
 
-    out property <brush> deepPurple-normal: MaterialPalette.deepPurple;
-    out property <brush> deepPurple-faded: dark-theme ? MaterialPalette.deepPurple-700 : MaterialPalette.deepPurple-300;
-    out property <brush> deepPurple-bright: dark-theme ? MaterialPalette.deepPurple-300 : MaterialPalette.deepPurple-700;
-    out property <brush> deepPurple-background: dark-theme ? MaterialPalette.deepPurple-800 : MaterialPalette.deepPurple-200;
-    out property <brush> deepPurple-foreground: dark-theme ? MaterialPalette.deepPurple-100 : MaterialPalette.deepPurple-900;
-    out property <brush> deepPurple-special: dark-theme ? MaterialPalette.deepPurple-A700 : MaterialPalette.deepPurple-A100;
+    out property <brush> deepPurple-normal: MaterialPalette.deepPurple.m;
+    out property <brush> deepPurple-faded: dark-theme ? MaterialPalette.deepPurple.m-700 : MaterialPalette.deepPurple.m-300;
+    out property <brush> deepPurple-bright: dark-theme ? MaterialPalette.deepPurple.m-300 : MaterialPalette.deepPurple.m-700;
+    out property <brush> deepPurple-background: dark-theme ? MaterialPalette.deepPurple.m-800 : MaterialPalette.deepPurple.m-200;
+    out property <brush> deepPurple-foreground: dark-theme ? MaterialPalette.deepPurple.m-100 : MaterialPalette.deepPurple.m-900;
+    out property <brush> deepPurple-special: dark-theme ? MaterialPalette.deepPurple.m-A700 : MaterialPalette.deepPurple.m-A100;
 
-    out property <brush> indigo-normal: MaterialPalette.indigo;
-    out property <brush> indigo-faded: dark-theme ? MaterialPalette.indigo-700 : MaterialPalette.indigo-300;
-    out property <brush> indigo-bright: dark-theme ? MaterialPalette.indigo-300 : MaterialPalette.indigo-700;
-    out property <brush> indigo-background: dark-theme ? MaterialPalette.indigo-800 : MaterialPalette.indigo-200;
-    out property <brush> indigo-foreground: dark-theme ? MaterialPalette.indigo-100 : MaterialPalette.indigo-900;
-    out property <brush> indigo-special: dark-theme ? MaterialPalette.indigo-A700 : MaterialPalette.indigo-A100;
+    out property <brush> indigo-normal: MaterialPalette.indigo.m;
+    out property <brush> indigo-faded: dark-theme ? MaterialPalette.indigo.m-700 : MaterialPalette.indigo.m-300;
+    out property <brush> indigo-bright: dark-theme ? MaterialPalette.indigo.m-300 : MaterialPalette.indigo.m-700;
+    out property <brush> indigo-background: dark-theme ? MaterialPalette.indigo.m-800 : MaterialPalette.indigo.m-200;
+    out property <brush> indigo-foreground: dark-theme ? MaterialPalette.indigo.m-100 : MaterialPalette.indigo.m-900;
+    out property <brush> indigo-special: dark-theme ? MaterialPalette.indigo.m-A700 : MaterialPalette.indigo.m-A100;
 
-    out property <brush> blue-normal: MaterialPalette.blue;
-    out property <brush> blue-faded: dark-theme ? MaterialPalette.blue-700 : MaterialPalette.blue-300;
-    out property <brush> blue-bright: dark-theme ? MaterialPalette.blue-300 : MaterialPalette.blue-700;
-    out property <brush> blue-background: dark-theme ? MaterialPalette.blue-800 : MaterialPalette.blue-200;
-    out property <brush> blue-foreground: dark-theme ? MaterialPalette.blue-100 : MaterialPalette.blue-900;
-    out property <brush> blue-special: dark-theme ? MaterialPalette.blue-A700 : MaterialPalette.blue-A100;
+    out property <brush> blue-normal: MaterialPalette.blue.m;
+    out property <brush> blue-faded: dark-theme ? MaterialPalette.blue.m-700 : MaterialPalette.blue.m-300;
+    out property <brush> blue-bright: dark-theme ? MaterialPalette.blue.m-300 : MaterialPalette.blue.m-700;
+    out property <brush> blue-background: dark-theme ? MaterialPalette.blue.m-800 : MaterialPalette.blue.m-200;
+    out property <brush> blue-foreground: dark-theme ? MaterialPalette.blue.m-100 : MaterialPalette.blue.m-900;
+    out property <brush> blue-special: dark-theme ? MaterialPalette.blue.m-A700 : MaterialPalette.blue.m-A100;
 
-    out property <brush> lightBlue-normal: MaterialPalette.lightBlue;
-    out property <brush> lightBlue-faded: dark-theme ? MaterialPalette.lightBlue-700 : MaterialPalette.lightBlue-300;
-    out property <brush> lightBlue-bright: dark-theme ? MaterialPalette.lightBlue-300 : MaterialPalette.lightBlue-700;
-    out property <brush> lightBlue-background: dark-theme ? MaterialPalette.lightBlue-800 : MaterialPalette.lightBlue-200;
-    out property <brush> lightBlue-foreground: dark-theme ? MaterialPalette.lightBlue-100 : MaterialPalette.lightBlue-900;
-    out property <brush> lightBlue-special: dark-theme ? MaterialPalette.lightBlue-A700 : MaterialPalette.lightBlue-A100;
+    out property <brush> lightBlue-normal: MaterialPalette.lightBlue.m;
+    out property <brush> lightBlue-faded: dark-theme ? MaterialPalette.lightBlue.m-700 : MaterialPalette.lightBlue.m-300;
+    out property <brush> lightBlue-bright: dark-theme ? MaterialPalette.lightBlue.m-300 : MaterialPalette.lightBlue.m-700;
+    out property <brush> lightBlue-background: dark-theme ? MaterialPalette.lightBlue.m-800 : MaterialPalette.lightBlue.m-200;
+    out property <brush> lightBlue-foreground: dark-theme ? MaterialPalette.lightBlue.m-100 : MaterialPalette.lightBlue.m-900;
+    out property <brush> lightBlue-special: dark-theme ? MaterialPalette.lightBlue.m-A700 : MaterialPalette.lightBlue.m-A100;
 
-    out property <brush> cyan-normal: MaterialPalette.cyan;
-    out property <brush> cyan-faded: dark-theme ? MaterialPalette.cyan-700 : MaterialPalette.cyan-300;
-    out property <brush> cyan-bright: dark-theme ? MaterialPalette.cyan-300 : MaterialPalette.cyan-700;
-    out property <brush> cyan-background: dark-theme ? MaterialPalette.cyan-800 : MaterialPalette.cyan-200;
-    out property <brush> cyan-foreground: dark-theme ? MaterialPalette.cyan-100 : MaterialPalette.cyan-900;
-    out property <brush> cyan-special: dark-theme ? MaterialPalette.cyan-A700 : MaterialPalette.cyan-A100;
+    out property <brush> cyan-normal: MaterialPalette.cyan.m;
+    out property <brush> cyan-faded: dark-theme ? MaterialPalette.cyan.m-700 : MaterialPalette.cyan.m-300;
+    out property <brush> cyan-bright: dark-theme ? MaterialPalette.cyan.m-300 : MaterialPalette.cyan.m-700;
+    out property <brush> cyan-background: dark-theme ? MaterialPalette.cyan.m-800 : MaterialPalette.cyan.m-200;
+    out property <brush> cyan-foreground: dark-theme ? MaterialPalette.cyan.m-100 : MaterialPalette.cyan.m-900;
+    out property <brush> cyan-special: dark-theme ? MaterialPalette.cyan.m-A700 : MaterialPalette.cyan.m-A100;
 
-    out property <brush> teal-normal: MaterialPalette.teal;
-    out property <brush> teal-faded: dark-theme ? MaterialPalette.teal-700 : MaterialPalette.teal-300;
-    out property <brush> teal-bright: dark-theme ? MaterialPalette.teal-300 : MaterialPalette.teal-700;
-    out property <brush> teal-background: dark-theme ? MaterialPalette.teal-800 : MaterialPalette.teal-200;
-    out property <brush> teal-foreground: dark-theme ? MaterialPalette.teal-100 : MaterialPalette.teal-900;
-    out property <brush> teal-special: dark-theme ? MaterialPalette.teal-A700 : MaterialPalette.teal-A100;
+    out property <brush> teal-normal: MaterialPalette.teal.m;
+    out property <brush> teal-faded: dark-theme ? MaterialPalette.teal.m-700 : MaterialPalette.teal.m-300;
+    out property <brush> teal-bright: dark-theme ? MaterialPalette.teal.m-300 : MaterialPalette.teal.m-700;
+    out property <brush> teal-background: dark-theme ? MaterialPalette.teal.m-800 : MaterialPalette.teal.m-200;
+    out property <brush> teal-foreground: dark-theme ? MaterialPalette.teal.m-100 : MaterialPalette.teal.m-900;
+    out property <brush> teal-special: dark-theme ? MaterialPalette.teal.m-A700 : MaterialPalette.teal.m-A100;
 
-    out property <brush> green-normal: MaterialPalette.green;
-    out property <brush> green-faded: dark-theme ? MaterialPalette.green-700 : MaterialPalette.green-300;
-    out property <brush> green-bright: dark-theme ? MaterialPalette.green-300 : MaterialPalette.green-700;
-    out property <brush> green-background: dark-theme ? MaterialPalette.green-800 : MaterialPalette.green-200;
-    out property <brush> green-foreground: dark-theme ? MaterialPalette.green-100 : MaterialPalette.green-900;
-    out property <brush> green-special: dark-theme ? MaterialPalette.green-A700 : MaterialPalette.green-A100;
+    out property <brush> green-normal: MaterialPalette.green.m;
+    out property <brush> green-faded: dark-theme ? MaterialPalette.green.m-700 : MaterialPalette.green.m-300;
+    out property <brush> green-bright: dark-theme ? MaterialPalette.green.m-300 : MaterialPalette.green.m-700;
+    out property <brush> green-background: dark-theme ? MaterialPalette.green.m-800 : MaterialPalette.green.m-200;
+    out property <brush> green-foreground: dark-theme ? MaterialPalette.green.m-100 : MaterialPalette.green.m-900;
+    out property <brush> green-special: dark-theme ? MaterialPalette.green.m-A700 : MaterialPalette.green.m-A100;
 
-    out property <brush> lightGreen-normal: MaterialPalette.lightGreen;
-    out property <brush> lightGreen-faded: dark-theme ? MaterialPalette.lightGreen-700 : MaterialPalette.lightGreen-300;
-    out property <brush> lightGreen-bright: dark-theme ? MaterialPalette.lightGreen-300 : MaterialPalette.lightGreen-700;
-    out property <brush> lightGreen-background: dark-theme ? MaterialPalette.lightGreen-800 : MaterialPalette.lightGreen-200;
-    out property <brush> lightGreen-foreground: dark-theme ? MaterialPalette.lightGreen-100 : MaterialPalette.lightGreen-900;
-    out property <brush> lightGreen-special: dark-theme ? MaterialPalette.lightGreen-A700 : MaterialPalette.lightGreen-A100;
+    out property <brush> lightGreen-normal: MaterialPalette.lightGreen.m;
+    out property <brush> lightGreen-faded: dark-theme ? MaterialPalette.lightGreen.m-700 : MaterialPalette.lightGreen.m-300;
+    out property <brush> lightGreen-bright: dark-theme ? MaterialPalette.lightGreen.m-300 : MaterialPalette.lightGreen.m-700;
+    out property <brush> lightGreen-background: dark-theme ? MaterialPalette.lightGreen.m-800 : MaterialPalette.lightGreen.m-200;
+    out property <brush> lightGreen-foreground: dark-theme ? MaterialPalette.lightGreen.m-100 : MaterialPalette.lightGreen.m-900;
+    out property <brush> lightGreen-special: dark-theme ? MaterialPalette.lightGreen.m-A700 : MaterialPalette.lightGreen.m-A100;
 
-    out property <brush> lime-normal: MaterialPalette.lime;
-    out property <brush> lime-faded: dark-theme ? MaterialPalette.lime-700 : MaterialPalette.lime-300;
-    out property <brush> lime-bright: dark-theme ? MaterialPalette.lime-300 : MaterialPalette.lime-700;
-    out property <brush> lime-background: dark-theme ? MaterialPalette.lime-800 : MaterialPalette.lime-200;
-    out property <brush> lime-foreground: dark-theme ? MaterialPalette.lime-100 : MaterialPalette.lime-900;
-    out property <brush> lime-special: dark-theme ? MaterialPalette.lime-A700 : MaterialPalette.lime-A100;
+    out property <brush> lime-normal: MaterialPalette.lime.m;
+    out property <brush> lime-faded: dark-theme ? MaterialPalette.lime.m-700 : MaterialPalette.lime.m-300;
+    out property <brush> lime-bright: dark-theme ? MaterialPalette.lime.m-300 : MaterialPalette.lime.m-700;
+    out property <brush> lime-background: dark-theme ? MaterialPalette.lime.m-800 : MaterialPalette.lime.m-200;
+    out property <brush> lime-foreground: dark-theme ? MaterialPalette.lime.m-100 : MaterialPalette.lime.m-900;
+    out property <brush> lime-special: dark-theme ? MaterialPalette.lime.m-A700 : MaterialPalette.lime.m-A100;
 
-    out property <brush> yellow-normal: MaterialPalette.yellow;
-    out property <brush> yellow-faded: dark-theme ? MaterialPalette.yellow-700 : MaterialPalette.yellow-300;
-    out property <brush> yellow-bright: dark-theme ? MaterialPalette.yellow-300 : MaterialPalette.yellow-700;
-    out property <brush> yellow-background: dark-theme ? MaterialPalette.yellow-800 : MaterialPalette.yellow-200;
-    out property <brush> yellow-foreground: dark-theme ? MaterialPalette.yellow-100 : MaterialPalette.yellow-900;
-    out property <brush> yellow-special: dark-theme ? MaterialPalette.yellow-A700 : MaterialPalette.yellow-A100;
+    out property <brush> yellow-normal: MaterialPalette.yellow.m;
+    out property <brush> yellow-faded: dark-theme ? MaterialPalette.yellow.m-700 : MaterialPalette.yellow.m-300;
+    out property <brush> yellow-bright: dark-theme ? MaterialPalette.yellow.m-300 : MaterialPalette.yellow.m-700;
+    out property <brush> yellow-background: dark-theme ? MaterialPalette.yellow.m-800 : MaterialPalette.yellow.m-200;
+    out property <brush> yellow-foreground: dark-theme ? MaterialPalette.yellow.m-100 : MaterialPalette.yellow.m-900;
+    out property <brush> yellow-special: dark-theme ? MaterialPalette.yellow.m-A700 : MaterialPalette.yellow.m-A100;
 
-    out property <brush> amber-normal: MaterialPalette.amber;
-    out property <brush> amber-faded: dark-theme ? MaterialPalette.amber-700 : MaterialPalette.amber-300;
-    out property <brush> amber-bright: dark-theme ? MaterialPalette.amber-300 : MaterialPalette.amber-700;
-    out property <brush> amber-background: dark-theme ? MaterialPalette.amber-800 : MaterialPalette.amber-200;
-    out property <brush> amber-foreground: dark-theme ? MaterialPalette.amber-100 : MaterialPalette.amber-900;
-    out property <brush> amber-special: dark-theme ? MaterialPalette.amber-A700 : MaterialPalette.amber-A100;
+    out property <brush> amber-normal: MaterialPalette.amber.m;
+    out property <brush> amber-faded: dark-theme ? MaterialPalette.amber.m-700 : MaterialPalette.amber.m-300;
+    out property <brush> amber-bright: dark-theme ? MaterialPalette.amber.m-300 : MaterialPalette.amber.m-700;
+    out property <brush> amber-background: dark-theme ? MaterialPalette.amber.m-800 : MaterialPalette.amber.m-200;
+    out property <brush> amber-foreground: dark-theme ? MaterialPalette.amber.m-100 : MaterialPalette.amber.m-900;
+    out property <brush> amber-special: dark-theme ? MaterialPalette.amber.m-A700 : MaterialPalette.amber.m-A100;
 
-    out property <brush> orange-normal: MaterialPalette.orange;
-    out property <brush> orange-faded: dark-theme ? MaterialPalette.orange-700 : MaterialPalette.orange-300;
-    out property <brush> orange-bright: dark-theme ? MaterialPalette.orange-300 : MaterialPalette.orange-700;
-    out property <brush> orange-background: dark-theme ? MaterialPalette.orange-800 : MaterialPalette.orange-200;
-    out property <brush> orange-foreground: dark-theme ? MaterialPalette.orange-100 : MaterialPalette.orange-900;
-    out property <brush> orange-special: dark-theme ? MaterialPalette.orange-A700 : MaterialPalette.orange-A100;
+    out property <brush> orange-normal: MaterialPalette.orange.m;
+    out property <brush> orange-faded: dark-theme ? MaterialPalette.orange.m-700 : MaterialPalette.orange.m-300;
+    out property <brush> orange-bright: dark-theme ? MaterialPalette.orange.m-300 : MaterialPalette.orange.m-700;
+    out property <brush> orange-background: dark-theme ? MaterialPalette.orange.m-800 : MaterialPalette.orange.m-200;
+    out property <brush> orange-foreground: dark-theme ? MaterialPalette.orange.m-100 : MaterialPalette.orange.m-900;
+    out property <brush> orange-special: dark-theme ? MaterialPalette.orange.m-A700 : MaterialPalette.orange.m-A100;
 
-    out property <brush> deepOrange-normal: MaterialPalette.deepOrange;
-    out property <brush> deepOrange-faded: dark-theme ? MaterialPalette.deepOrange-700 : MaterialPalette.deepOrange-300;
-    out property <brush> deepOrange-bright: dark-theme ? MaterialPalette.deepOrange-300 : MaterialPalette.deepOrange-700;
-    out property <brush> deepOrange-background: dark-theme ? MaterialPalette.deepOrange-800 : MaterialPalette.deepOrange-200;
-    out property <brush> deepOrange-foreground: dark-theme ? MaterialPalette.deepOrange-100 : MaterialPalette.deepOrange-900;
-    out property <brush> deepOrange-special: dark-theme ? MaterialPalette.deepOrange-A700 : MaterialPalette.deepOrange-A100;
+    out property <brush> deepOrange-normal: MaterialPalette.deepOrange.m;
+    out property <brush> deepOrange-faded: dark-theme ? MaterialPalette.deepOrange.m-700 : MaterialPalette.deepOrange.m-300;
+    out property <brush> deepOrange-bright: dark-theme ? MaterialPalette.deepOrange.m-300 : MaterialPalette.deepOrange.m-700;
+    out property <brush> deepOrange-background: dark-theme ? MaterialPalette.deepOrange.m-800 : MaterialPalette.deepOrange.m-200;
+    out property <brush> deepOrange-foreground: dark-theme ? MaterialPalette.deepOrange.m-100 : MaterialPalette.deepOrange.m-900;
+    out property <brush> deepOrange-special: dark-theme ? MaterialPalette.deepOrange.m-A700 : MaterialPalette.deepOrange.m-A100;
 
-    out property <brush> brown-normal: MaterialPalette.brown;
-    out property <brush> brown-faded: dark-theme ? MaterialPalette.brown-700 : MaterialPalette.brown-300;
-    out property <brush> brown-bright: dark-theme ? MaterialPalette.brown-300 : MaterialPalette.brown-700;
-    out property <brush> brown-background: dark-theme ? MaterialPalette.brown-800 : MaterialPalette.brown-200;
-    out property <brush> brown-foreground: dark-theme ? MaterialPalette.brown-100 : MaterialPalette.brown-900;
-    out property <brush> brown-special: dark-theme ? MaterialPalette.brown-A700 : MaterialPalette.brown-A100;
+    out property <brush> brown-normal: MaterialPalette.brown.m;
+    out property <brush> brown-faded: dark-theme ? MaterialPalette.brown.m-700 : MaterialPalette.brown.m-300;
+    out property <brush> brown-bright: dark-theme ? MaterialPalette.brown.m-300 : MaterialPalette.brown.m-700;
+    out property <brush> brown-background: dark-theme ? MaterialPalette.brown.m-800 : MaterialPalette.brown.m-200;
+    out property <brush> brown-foreground: dark-theme ? MaterialPalette.brown.m-100 : MaterialPalette.brown.m-900;
+    out property <brush> brown-special: dark-theme ? MaterialPalette.brown.m-A700 : MaterialPalette.brown.m-A100;
 
-    out property <brush> grey-normal: MaterialPalette.grey;
-    out property <brush> grey-faded: dark-theme ? MaterialPalette.grey-700 : MaterialPalette.grey-300;
-    out property <brush> grey-bright: dark-theme ? MaterialPalette.grey-300 : MaterialPalette.grey-700;
-    out property <brush> grey-background: dark-theme ? MaterialPalette.grey-800 : MaterialPalette.grey-200;
-    out property <brush> grey-foreground: dark-theme ? MaterialPalette.grey-100 : MaterialPalette.grey-900;
-    out property <brush> grey-special: dark-theme ? MaterialPalette.grey-A700 : MaterialPalette.grey-A100;
+    out property <brush> grey-normal: MaterialPalette.grey.m;
+    out property <brush> grey-faded: dark-theme ? MaterialPalette.grey.m-700 : MaterialPalette.grey.m-300;
+    out property <brush> grey-bright: dark-theme ? MaterialPalette.grey.m-300 : MaterialPalette.grey.m-700;
+    out property <brush> grey-background: dark-theme ? MaterialPalette.grey.m-800 : MaterialPalette.grey.m-200;
+    out property <brush> grey-foreground: dark-theme ? MaterialPalette.grey.m-100 : MaterialPalette.grey.m-900;
+    out property <brush> grey-special: dark-theme ? MaterialPalette.grey.m-A700 : MaterialPalette.grey.m-A100;
 
-    out property <brush> blueGrey-normal: MaterialPalette.blueGrey;
-    out property <brush> blueGrey-faded: dark-theme ? MaterialPalette.blueGrey-700 : MaterialPalette.blueGrey-300;
-    out property <brush> blueGrey-bright: dark-theme ? MaterialPalette.blueGrey-300 : MaterialPalette.blueGrey-700;
-    out property <brush> blueGrey-background: dark-theme ? MaterialPalette.blueGrey-800 : MaterialPalette.blueGrey-200;
-    out property <brush> blueGrey-foreground: dark-theme ? MaterialPalette.blueGrey-100 : MaterialPalette.blueGrey-900;
-    out property <brush> blueGrey-special: dark-theme ? MaterialPalette.blueGrey-A700 : MaterialPalette.blueGrey-A100;
+    out property <brush> blueGrey-normal: MaterialPalette.blueGrey.m;
+    out property <brush> blueGrey-faded: dark-theme ? MaterialPalette.blueGrey.m-700 : MaterialPalette.blueGrey.m-300;
+    out property <brush> blueGrey-bright: dark-theme ? MaterialPalette.blueGrey.m-300 : MaterialPalette.blueGrey.m-700;
+    out property <brush> blueGrey-background: dark-theme ? MaterialPalette.blueGrey.m-800 : MaterialPalette.blueGrey.m-200;
+    out property <brush> blueGrey-foreground: dark-theme ? MaterialPalette.blueGrey.m-100 : MaterialPalette.blueGrey.m-900;
+    out property <brush> blueGrey-special: dark-theme ? MaterialPalette.blueGrey.m-A700 : MaterialPalette.blueGrey.m-A100;
 }
 
