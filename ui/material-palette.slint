@@ -446,6 +446,26 @@ export global MaterialScheme {
     out property <AccentScheme> primary-accent: scheme(dark-color-scheme, primary-accent-color);
     out property <AccentScheme> secondary-accent: scheme(dark-color-scheme, secondary-accent-color);
 
+    out property <AccentScheme> red: scheme(dark-color-scheme, "red");
+    out property <AccentScheme> pink: scheme(dark-color-scheme, "pink");
+    out property <AccentScheme> purple: scheme(dark-color-scheme, "purple");
+    out property <AccentScheme> deepPurple: scheme(dark-color-scheme, "deepPurple");
+    out property <AccentScheme> indigo: scheme(dark-color-scheme, "indigo");
+    out property <AccentScheme> blue: scheme(dark-color-scheme, "blue");
+    out property <AccentScheme> lightBlue: scheme(dark-color-scheme, "lightBlue");
+    out property <AccentScheme> cyan: scheme(dark-color-scheme, "cyan");
+    out property <AccentScheme> teal: scheme(dark-color-scheme, "teal");
+    out property <AccentScheme> green: scheme(dark-color-scheme, "green");
+    out property <AccentScheme> lightGreen: scheme(dark-color-scheme, "lightGreen");
+    out property <AccentScheme> lime: scheme(dark-color-scheme, "lime");
+    out property <AccentScheme> yellow: scheme(dark-color-scheme, "yellow");
+    out property <AccentScheme> amber: scheme(dark-color-scheme, "amber");
+    out property <AccentScheme> orange: scheme(dark-color-scheme, "orange");
+    out property <AccentScheme> deepOrange: scheme(dark-color-scheme, "deepOrange");
+    out property <AccentScheme> brown: scheme(dark-color-scheme, "brown");
+    out property <AccentScheme> grey: scheme(dark-color-scheme, "grey");
+    out property <AccentScheme> blueGrey: scheme(dark-color-scheme, "blueGrey");
+
     public pure function variants-to-scheme(dark: bool, variants: MaterialVariants) -> AccentScheme {
         {
             foreground: dark ? variants.m-100 : variants.m-900,
