@@ -621,6 +621,51 @@ component MaterialPaletteDisplayWidget inherits HorizontalLayout {
     MaterialVariantsDisplayWidget { accent-color: "blueGrey"; colors: MaterialPalette.blueGrey; }
 }
 
+component AccentPaletteDisplayWidget inherits VerticalLayout {
+    in property <bool> dark-color-scheme: MaterialScheme.dark-color-scheme;
+    in property <string> accent-color: MaterialScheme.primary-accent-color;
+    in property <AccentPalette> palette: MaterialScheme.scheme(accent-color, dark-color-scheme);
+
+    width: 70px;
+
+    ColorPaletteSample { bg: palette.foreground; text: "foreground"; }
+    ColorPaletteSample { bg: palette.bright; text: "bright"; }
+    ColorPaletteSample { bg: palette.normal; text: "normal"; }
+    ColorPaletteSample { bg: palette.faded; text: "faded"; }
+    ColorPaletteSample { bg: palette.background; text: "background"; }
+    ColorPaletteSample { bg: palette.special; text: "special"; }
+}
+
+component AccentPalettesDisplayWidget inherits HorizontalLayout {
+    in property <bool> dark-color-scheme;
+    in property <[string]> colors: [
+        "red",
+        "pink",
+        "purple",
+        "deepPurple",
+        "indigo",
+        "blue",
+        "lightBlue",
+        "cyan",
+        "teal",
+        "green",
+        "lightGreen",
+        "lime",
+        "yellow",
+        "amber",
+        "orange",
+        "deepOrange",
+        "brown",
+        "grey",
+        "blueGrey",
+    ];
+
+    for color in colors: AccentPaletteDisplayWidget {
+        dark-color-scheme: dark-color-scheme;
+        accent-color: color;
+    }
+}
+
 component LabelBar inherits Rectangle {
     in property <brush> bg <=> self.background;
     in property <brush> fg <=> i-label.color;
@@ -647,6 +692,16 @@ component PaletteDisplayWindow inherits Window {
         VerticalLayout {
             LabelBar { text: "Material Palette"; }
             MaterialPaletteDisplayWidget {}
+
+            LabelBar { text: "Light Accent Palettes"; }
+            AccentPalettesDisplayWidget {
+                dark-color-scheme: true;
+            }
+
+            LabelBar { text: "Dark Accent Palettes"; }
+            AccentPalettesDisplayWidget {
+                dark-color-scheme: false;
+            }
         }
     }
 }
