@@ -499,25 +499,10 @@ component MaterialVariantsDisplayWidget inherits VerticalLayout {
 }
 
 component MaterialPaletteDisplayWidget inherits HorizontalLayout {
-    MaterialVariantsDisplayWidget { accent-color: "red"; colors: MaterialPalette.red; }
-    MaterialVariantsDisplayWidget { accent-color: "pink"; colors: MaterialPalette.pink; }
-    MaterialVariantsDisplayWidget { accent-color: "purple"; colors: MaterialPalette.purple; }
-    MaterialVariantsDisplayWidget { accent-color: "deepPurple"; colors: MaterialPalette.deepPurple; }
-    MaterialVariantsDisplayWidget { accent-color: "indigo"; colors: MaterialPalette.indigo; }
-    MaterialVariantsDisplayWidget { accent-color: "blue"; colors: MaterialPalette.blue; }
-    MaterialVariantsDisplayWidget { accent-color: "lightBlue"; colors: MaterialPalette.lightBlue; }
-    MaterialVariantsDisplayWidget { accent-color: "cyan"; colors: MaterialPalette.cyan; }
-    MaterialVariantsDisplayWidget { accent-color: "teal"; colors: MaterialPalette.teal; }
-    MaterialVariantsDisplayWidget { accent-color: "green"; colors: MaterialPalette.green; }
-    MaterialVariantsDisplayWidget { accent-color: "lightGreen"; colors: MaterialPalette.lightGreen; }
-    MaterialVariantsDisplayWidget { accent-color: "lime"; colors: MaterialPalette.lime; }
-    MaterialVariantsDisplayWidget { accent-color: "yellow"; colors: MaterialPalette.yellow; }
-    MaterialVariantsDisplayWidget { accent-color: "amber"; colors: MaterialPalette.amber; }
-    MaterialVariantsDisplayWidget { accent-color: "orange"; colors: MaterialPalette.orange; }
-    MaterialVariantsDisplayWidget { accent-color: "deepOrange"; colors: MaterialPalette.deepOrange; }
-    MaterialVariantsDisplayWidget { accent-color: "brown"; colors: MaterialPalette.brown; }
-    MaterialVariantsDisplayWidget { accent-color: "grey"; colors: MaterialPalette.grey; }
-    MaterialVariantsDisplayWidget { accent-color: "blueGrey"; colors: MaterialPalette.blueGrey; }
+    for color in MaterialPalette.colors : MaterialVariantsDisplayWidget {
+        accent-color: color;
+        colors: MaterialPalette.variants(color);
+    }
 }
 
 component AccentSchemeDisplayWidget inherits VerticalLayout {
