@@ -526,12 +526,12 @@ component AccentPaletteDisplayWidget inherits VerticalLayout {
 
     width: 70px;
 
-    ColorPaletteSample { bg: palette.foreground; text: "foreground"; }
-    ColorPaletteSample { bg: palette.bright; text: "bright"; }
-    ColorPaletteSample { bg: palette.normal; text: "normal"; }
-    ColorPaletteSample { bg: palette.faded; text: "faded"; }
-    ColorPaletteSample { bg: palette.background; text: "background"; }
-    ColorPaletteSample { bg: palette.special; text: "special"; }
+    ColorPaletteSample { bg: palette.foreground; fg: palette.background; text: "foreground"; }
+    ColorPaletteSample { bg: palette.bright; fg: palette.faded; text: "bright"; }
+    ColorPaletteSample { bg: palette.normal; fg: Colors.white; text: "normal"; }
+    ColorPaletteSample { bg: palette.faded; fg: palette.bright; text: "faded"; }
+    ColorPaletteSample { bg: palette.background; fg: palette.foreground; text: "background"; }
+    ColorPaletteSample { bg: palette.special; fg: Colors.white; text: "special"; }
 }
 
 component AccentPalettesDisplayWidget inherits HorizontalLayout {
