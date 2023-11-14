@@ -378,7 +378,7 @@ export global MaterialScheme {
     out property <AccentPalette> primary-accent: scheme(primary-accent-color);
     out property <AccentPalette> secondary-accent: scheme(secondary-accent-color);
 
-    pure function scheme(name: string) -> AccentPalette {
+    public pure function scheme(name: string) -> AccentPalette {
         if (name == "red") {
             {
                 normal: MaterialPalette.red.m,
