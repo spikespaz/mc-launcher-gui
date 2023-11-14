@@ -17,6 +17,28 @@ export struct MaterialVariants {
 }
 
 export global MaterialPalette {
+    out property <[string]> colors: [
+        "red",
+        "pink",
+        "purple",
+        "deepPurple",
+        "indigo",
+        "blue",
+        "lightBlue",
+        "cyan",
+        "teal",
+        "green",
+        "lightGreen",
+        "lime",
+        "yellow",
+        "amber",
+        "orange",
+        "deepOrange",
+        "brown",
+        "grey",
+        "blueGrey",
+    ];
+
     out property <MaterialVariants> red: {
         m: #f44336,
         m-50: #ffebee,
@@ -514,29 +536,8 @@ component AccentPaletteDisplayWidget inherits VerticalLayout {
 
 component AccentPalettesDisplayWidget inherits HorizontalLayout {
     in property <bool> dark-color-scheme;
-    in property <[string]> colors: [
-        "red",
-        "pink",
-        "purple",
-        "deepPurple",
-        "indigo",
-        "blue",
-        "lightBlue",
-        "cyan",
-        "teal",
-        "green",
-        "lightGreen",
-        "lime",
-        "yellow",
-        "amber",
-        "orange",
-        "deepOrange",
-        "brown",
-        "grey",
-        "blueGrey",
-    ];
 
-    for color in colors: AccentPaletteDisplayWidget {
+    for color in MaterialPalette.colors: AccentPaletteDisplayWidget {
         dark-color-scheme: dark-color-scheme;
         accent-color: color;
     }
