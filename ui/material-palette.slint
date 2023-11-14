@@ -447,12 +447,12 @@ export global MaterialScheme {
 
     public pure function variants-to-scheme(dark: bool, variants: MaterialVariants) -> AccentPalette {
         {
-            foreground: dark ? MaterialPalette.red.m-100 : MaterialPalette.red.m-900,
-            bright: dark ? MaterialPalette.red.m-300 : MaterialPalette.red.m-700,
-            normal: MaterialPalette.red.m,
-            faded: dark ? MaterialPalette.red.m-700 : MaterialPalette.red.m-300,
-            background: dark ? MaterialPalette.red.m-800 : MaterialPalette.red.m-200,
-            special: dark ? MaterialPalette.red.m-A700 : MaterialPalette.red.m-A100,
+            foreground: dark ? variants.m-100 : variants.m-900,
+            bright: dark ? variants.m-700 : variants.m-300,
+            normal: variants.m-500,
+            faded: dark ? variants.m-300 : variants.m-700,
+            background: dark ? variants.m-900 : variants.m-100,
+            special: variants.m-A700,
         }
     }
 
