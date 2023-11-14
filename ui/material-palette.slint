@@ -427,7 +427,7 @@ export global MaterialPalette {
     }
 }
 
-export struct AccentPalette {
+export struct AccentScheme {
     normal: brush,
     faded: brush,
     bright: brush,
@@ -442,10 +442,11 @@ export global MaterialScheme {
     in-out property <string> primary-accent-color: "teal";
     in-out property <string> secondary-accent-color: "deepOrange";
 
-    out property <AccentPalette> primary-accent: scheme(dark-color-scheme, primary-accent-color);
-    out property <AccentPalette> secondary-accent: scheme(dark-color-scheme, secondary-accent-color);
+    out property <AccentScheme> background: scheme(dark-color-scheme, "grey");
+    out property <AccentScheme> primary-accent: scheme(dark-color-scheme, primary-accent-color);
+    out property <AccentScheme> secondary-accent: scheme(dark-color-scheme, secondary-accent-color);
 
-    public pure function variants-to-scheme(dark: bool, variants: MaterialVariants) -> AccentPalette {
+    public pure function variants-to-scheme(dark: bool, variants: MaterialVariants) -> AccentScheme {
         {
             foreground: dark ? variants.m-100 : variants.m-900,
             bright: dark ? variants.m-700 : variants.m-300,
@@ -456,7 +457,7 @@ export global MaterialScheme {
         }
     }
 
-    public pure function scheme(dark: bool, name: string) -> AccentPalette {
+    public pure function scheme(dark: bool, name: string) -> AccentScheme {
         variants-to-scheme(dark, MaterialPalette.variants(name))
     }
 }
@@ -519,10 +520,10 @@ component MaterialPaletteDisplayWidget inherits HorizontalLayout {
     MaterialVariantsDisplayWidget { accent-color: "blueGrey"; colors: MaterialPalette.blueGrey; }
 }
 
-component AccentPaletteDisplayWidget inherits VerticalLayout {
+component AccentSchemeDisplayWidget inherits VerticalLayout {
     in property <bool> dark-color-scheme: MaterialScheme.dark-color-scheme;
     in property <string> accent-color: MaterialScheme.primary-accent-color;
-    in property <AccentPalette> palette: MaterialScheme.scheme(dark-color-scheme, accent-color);
+    in property <AccentScheme> palette: MaterialScheme.scheme(dark-color-scheme, accent-color);
 
     width: 70px;
 
@@ -534,10 +535,10 @@ component AccentPaletteDisplayWidget inherits VerticalLayout {
     ColorPaletteSample { bg: palette.special; fg: Colors.white; text: "special"; }
 }
 
-component AccentPalettesDisplayWidget inherits HorizontalLayout {
+component AccentSchemesDisplayWidget inherits HorizontalLayout {
     in property <bool> dark-color-scheme;
 
-    for color in MaterialPalette.colors: AccentPaletteDisplayWidget {
+    for color in MaterialPalette.colors: AccentSchemeDisplayWidget {
         dark-color-scheme: dark-color-scheme;
         accent-color: color;
     }
@@ -556,7 +557,6 @@ component LabelBar inherits Rectangle {
 
     i-label := Text {
         x: parent.x + y-offset;
-        text: "All Accent Palettes";
         color: #FFFFFF;
         font-size: 2rem;
     }
@@ -571,12 +571,12 @@ component PaletteDisplayWindow inherits Window {
             MaterialPaletteDisplayWidget {}
 
             LabelBar { text: "Light Accent Palettes"; }
-            AccentPalettesDisplayWidget {
+            AccentSchemesDisplayWidget {
                 dark-color-scheme: true;
             }
 
             LabelBar { text: "Dark Accent Palettes"; }
-            AccentPalettesDisplayWidget {
+            AccentSchemesDisplayWidget {
                 dark-color-scheme: false;
             }
         }
