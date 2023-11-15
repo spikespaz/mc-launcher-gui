@@ -1,0 +1,77 @@
+import { MaterialPalette, MaterialScheme, AccentScheme } from "../material-palette.slint";
+import { GlobalStyle, ButtonStyle } from "style/global.slint";
+
+export component Button {
+  in property <AccentScheme> base-accent: MaterialScheme.base-accent;
+  in property <AccentScheme> accent: MaterialScheme.primary-accent;
+  in property <ButtonStyle> style: GlobalStyle.button;
+
+  in-out property <string> text <=> i-label.text;
+  in-out property <bool> enabled: false;
+  in-out property <bool> filled: style.filled;
+
+  out property <bool> pressed: self.enabled && i-touch-area.pressed;
+
+  width: i-label.width + style.padding-x * 2 + style.margin-x * 2;
+  height: i-label.height + style.depress + style.padding-y * 2 + style.margin-y * 2;
+
+  i-box := Rectangle {
+    x: root.width / 2 - self.width / 2;
+    y: root.height / 2 - self.height / 2;
+
+    width: root.width - style.margin-x * 2;
+    height: root.height - style.margin-y * 2;
+
+    i-bottom := Rectangle {
+      y: style.depress;
+
+      width: i-background.width;
+      height: i-background.height;
+
+      background: filled ? accent.bg-darker : accent.bg-normal;
+
+      border-radius: style.border-radius;
+
+      drop-shadow-color: filled ? accent.bg-normal : accent.bg-darker ;
+      drop-shadow-blur: style.shadow-blur;
+    }
+
+    i-background := Rectangle {
+      y: 0;
+
+      width: i-label.width + style.padding-x * 2;
+      height: i-label.height + style.padding-y * 2;
+
+      background: filled ? accent.bg-normal : base-accent.bg-normal;
+
+      border-color: accent.fg-bright;
+      border-width: style.border-width;
+      border-radius: style.border-radius;
+
+      i-label := Text {
+        color: filled ? base-accent.fg-normal : accent.fg-bright;
+
+        font-family: style.font-family;
+        font-size: style.font-size;
+        font-weight: style.font-weight;
+
+        text: "Button";
+      }
+    }
+  }
+
+  i-touch-area := TouchArea {}
+
+  states [
+    disabled when !root.enabled : {
+      root.opacity: 0.5;
+    }
+    pressed when root.pressed : {
+      i-background.y: style.depress / 2;
+    }
+    hover when i-touch-area.has-hover : {
+      i-background.background: filled ? accent.bg-faded : base-accent.bg-faded;
+      i-label.color: filled ? base-accent.fg-bright : accent.fg-bright;
+    }
+  ]
+}
