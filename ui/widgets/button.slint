@@ -76,3 +76,60 @@ export component Button {
     }
   ]
 }
+
+import { GridBox , VerticalBox, ScrollView } from "std-widgets.slint";
+
+export component ButtonPaletteVerticalDisplay inherits VerticalBox {
+  in property <bool> dark-color-scheme: true;
+  in property <ButtonStyle> style: GlobalStyle.button;
+
+  in property <bool> enabled: true;
+  in property <bool> filled: true;
+
+  for color in MaterialPalette.colors: Button {
+    style: style;
+    base-accent: MaterialScheme.scheme(dark-color-scheme, "grey");
+    accent: MaterialScheme.scheme(dark-color-scheme, color);
+    enabled: enabled;
+    filled: filled;
+  }
+}
+
+export component ButtonPaletteTableDisplay inherits Window {
+  // width: 300px;
+  // height: 500px;
+  background: MaterialScheme.base-accent.bg1;
+
+  ScrollView {
+    HorizontalLayout {
+      Rectangle {
+        background: MaterialScheme.scheme(true, "grey").bg0;
+        HorizontalLayout {
+          ButtonPaletteVerticalDisplay { dark-color-scheme: true; }
+          ButtonPaletteVerticalDisplay { dark-color-scheme: true; filled: false; }
+        }
+      }
+      Rectangle {
+        background: MaterialScheme.scheme(false, "grey").bg0;
+        HorizontalLayout {
+          ButtonPaletteVerticalDisplay { dark-color-scheme: false; }
+          ButtonPaletteVerticalDisplay { dark-color-scheme: false; filled: false; }
+        }
+      }
+      Rectangle {
+        background: MaterialScheme.scheme(true, "grey").bg0;
+        HorizontalLayout {
+          ButtonPaletteVerticalDisplay { dark-color-scheme: true; enabled: false; }
+          ButtonPaletteVerticalDisplay { dark-color-scheme: true; filled: false; enabled: false; }
+        }
+      }
+      Rectangle {
+        background: MaterialScheme.scheme(false, "grey").bg0;
+        HorizontalLayout {
+          ButtonPaletteVerticalDisplay { dark-color-scheme: false; enabled: false; }
+          ButtonPaletteVerticalDisplay { dark-color-scheme: false; filled: false; enabled: false; }
+        }
+      }
+    }
+  }
+}
