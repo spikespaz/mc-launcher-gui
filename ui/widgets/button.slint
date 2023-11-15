@@ -28,11 +28,11 @@ export component Button {
       width: i-background.width;
       height: i-background.height;
 
-      background: filled ? accent.bg3 : accent.bg1;
+      background: accent.bg3;
 
       border-radius: style.border-radius;
 
-      drop-shadow-color: filled ? accent.bg1 : accent.bg1;
+      drop-shadow-color: accent.fg3;
       drop-shadow-blur: style.shadow-blur;
     }
 
@@ -42,14 +42,14 @@ export component Button {
       width: i-label.width + style.padding-x * 2;
       height: i-label.height + style.padding-y * 2;
 
-      background: filled ? accent.bg2 : base-accent.bg2;
+      background: filled ? accent.bg2 : base-accent.bg1;
 
       border-color: filled ? accent.fg3 : accent.fg2;
       border-width: style.border-width;
       border-radius: style.border-radius;
 
       i-label := Text {
-        color: filled ? base-accent.fg0 : accent.fg0;
+        color: !style.accent-text || filled ? base-accent.fg0 : accent.fg0;
 
         font-family: style.font-family;
         font-size: style.font-size;
@@ -70,8 +70,9 @@ export component Button {
       i-background.y: style.depress / 2;
     }
     hover when i-touch-area.has-hover : {
-      i-bottom.background: filled ? accent.bg1 : accent.bg3;
-      i-background.background: filled ? accent.bg3 : base-accent.bg3;
+      i-bottom.background: accent.bg1;
+      i-bottom.drop-shadow-color: accent.fg1;
+      i-background.background: filled ? accent.bg3 : base-accent.bg2;
       // i-label.color: filled ? base-accent.fg0 : accent.fg0;
     }
   ]

@@ -5,6 +5,7 @@ export struct ButtonStyle {
     font-family: string,
     font-size: length,
     font-weight: int,
+    accent-text: bool,
     margin-x: length,
     margin-y: length,
     padding-x: length,
@@ -23,11 +24,12 @@ export global GlobalStyle {
         font-family: "",
         font-size: 16px,
         font-weight: 500,
+        accent-text: false,
         margin-x: 4px,
         margin-y: 4px,
         padding-x: 14px,
         padding-y: 6px,
         depress: 3px,
-        shadow-blur: 6px,
+        shadow-blur: 4px,
     };
 }
