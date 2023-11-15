@@ -28,11 +28,11 @@ export component Button {
       width: i-background.width;
       height: i-background.height;
 
-      background: filled ? accent.bg-darker : accent.bg-normal;
+      background: filled ? accent.bg3 : accent.bg1;
 
       border-radius: style.border-radius;
 
-      drop-shadow-color: filled ? accent.bg-normal : accent.bg-darker ;
+      drop-shadow-color: filled ? accent.bg1 : accent.bg1;
       drop-shadow-blur: style.shadow-blur;
     }
 
@@ -42,14 +42,14 @@ export component Button {
       width: i-label.width + style.padding-x * 2;
       height: i-label.height + style.padding-y * 2;
 
-      background: filled ? accent.bg-normal : base-accent.bg-normal;
+      background: filled ? accent.bg2 : base-accent.bg2;
 
-      border-color: accent.fg-bright;
+      border-color: filled ? accent.fg3 : accent.fg2;
       border-width: style.border-width;
       border-radius: style.border-radius;
 
       i-label := Text {
-        color: filled ? base-accent.fg-normal : accent.fg-bright;
+        color: filled ? base-accent.fg0 : accent.fg0;
 
         font-family: style.font-family;
         font-size: style.font-size;
@@ -70,8 +70,9 @@ export component Button {
       i-background.y: style.depress / 2;
     }
     hover when i-touch-area.has-hover : {
-      i-background.background: filled ? accent.bg-faded : base-accent.bg-faded;
-      i-label.color: filled ? base-accent.fg-bright : accent.fg-bright;
+      i-bottom.background: filled ? accent.bg1 : accent.bg3;
+      i-background.background: filled ? accent.bg3 : base-accent.bg3;
+      // i-label.color: filled ? base-accent.fg0 : accent.fg0;
     }
   ]
 }
