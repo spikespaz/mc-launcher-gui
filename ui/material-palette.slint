@@ -428,12 +428,20 @@ export global MaterialPalette {
 }
 
 export struct AccentScheme {
-    normal: brush,
-    faded: brush,
-    bright: brush,
-    background: brush,
-    foreground: brush,
-    special: brush,
+    fg0: brush,
+    fg1: brush,
+    fg2: brush,
+    fg3: brush,
+    fg4: brush,
+    bg0: brush,
+    bg1: brush,
+    bg2: brush,
+    bg3: brush,
+    bg4: brush,
+    light: brush,
+    saturated: brush,
+    vibrant: brush,
+    rich: brush,
 }
 
 export global MaterialScheme {
@@ -466,14 +474,22 @@ export global MaterialScheme {
     out property <AccentScheme> grey: scheme(dark-color-scheme, "grey");
     out property <AccentScheme> blueGrey: scheme(dark-color-scheme, "blueGrey");
 
-    public pure function variants-to-scheme(dark: bool, variants: MaterialVariants) -> AccentScheme {
+    public pure function variants-to-scheme(dark: bool, color: MaterialVariants) -> AccentScheme {
         {
-            foreground: dark ? variants.m-100 : variants.m-900,
-            bright: dark ? variants.m-700 : variants.m-300,
-            normal: variants.m-500,
-            faded: dark ? variants.m-300 : variants.m-700,
-            background: dark ? variants.m-900 : variants.m-100,
-            special: variants.m-A700,
+            fg0: dark ? color.m-50 : color.m-900,
+            fg1: dark ? color.m-100 : color.m-800,
+            fg2: dark ? color.m-200 : color.m-700,
+            fg3: dark ? color.m-300 : color.m-600,
+            fg4: dark ? color.m-400 : color.m-500,
+            bg0: dark ? color.m-900 : color.m-50,
+            bg1: dark ? color.m-800 : color.m-100,
+            bg2: dark ? color.m-700 : color.m-200,
+            bg3: dark ? color.m-600 : color.m-300,
+            bg4: dark ? color.m-500 : color.m-400,
+            light: color.m-A100,
+            saturated: color.m-A200,
+            vibrant: color.m-A400,
+            rich: color.m-A700,
         }
     }
 
@@ -532,12 +548,20 @@ component AccentSchemeDisplayWidget inherits VerticalLayout {
 
     width: 70px;
 
-    ColorPaletteSample { bg: palette.foreground; fg: palette.background; text: "foreground"; }
-    ColorPaletteSample { bg: palette.bright; fg: palette.faded; text: "bright"; }
-    ColorPaletteSample { bg: palette.normal; fg: Colors.white; text: "normal"; }
-    ColorPaletteSample { bg: palette.faded; fg: palette.bright; text: "faded"; }
-    ColorPaletteSample { bg: palette.background; fg: palette.foreground; text: "background"; }
-    ColorPaletteSample { bg: palette.special; fg: Colors.white; text: "special"; }
+    ColorPaletteSample { bg: palette.bg0; fg: palette.fg0; text: "bg0"; }
+    ColorPaletteSample { bg: palette.bg1; fg: palette.fg0; text: "bg1"; }
+    ColorPaletteSample { bg: palette.bg2; fg: palette.fg0; text: "bg2"; }
+    ColorPaletteSample { bg: palette.bg3; fg: palette.fg0; text: "bg3"; }
+    ColorPaletteSample { bg: palette.bg4; fg: palette.fg0; text: "bg4"; }
+    ColorPaletteSample { bg: palette.fg0; fg: palette.bg0; text: "fg0"; }
+    ColorPaletteSample { bg: palette.fg1; fg: palette.bg0; text: "fg1"; }
+    ColorPaletteSample { bg: palette.fg2; fg: palette.bg0; text: "fg2"; }
+    ColorPaletteSample { bg: palette.fg3; fg: palette.bg0; text: "fg3"; }
+    ColorPaletteSample { bg: palette.fg4; fg: palette.bg0; text: "fg4"; }
+    ColorPaletteSample { bg: palette.light; text: "light"; }
+    ColorPaletteSample { bg: palette.saturated; text: "saturated"; }
+    ColorPaletteSample { bg: palette.vibrant; text: "vibrant"; }
+    ColorPaletteSample { bg: palette.rich; text: "rich"; }
 }
 
 component AccentSchemesDisplayWidget inherits HorizontalLayout {
