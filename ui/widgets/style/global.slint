@@ -11,6 +11,8 @@ export struct ButtonStyle {
   padding-x: length,
   padding-y: length,
   depress: length,
+  // depress-easing: easing,
+  depress-duration: duration,
   shadow-blur: length,
 }
 
@@ -30,6 +32,8 @@ export global GlobalStyle {
     padding-x: 14px,
     padding-y: 6px,
     depress: 4px,
+    // depress-easing: ease,
+    depress-duration: 40ms,
     shadow-blur: 4px,
   };
 
@@ -46,6 +50,8 @@ export global GlobalStyle {
     padding-x: 14px,
     padding-y: 6px,
     depress: 4px,
+    // depress-easing: ease_in,
+    depress-duration: 40ms,
     shadow-blur: 2px,
   };
 }

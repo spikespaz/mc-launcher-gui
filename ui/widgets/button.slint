@@ -40,6 +40,10 @@ export component Button {
 
     i-background := Rectangle {
       y: 0;
+      animate y {
+        duration: style.depress-duration;
+        easing: ease-in;
+      }
 
       width: i-label.width + style.padding-x * 2;
       height: i-label.height + style.padding-y * 2;
