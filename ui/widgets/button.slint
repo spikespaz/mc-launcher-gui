@@ -30,7 +30,7 @@ export component Button {
       width: i-background.width;
       height: i-background.height;
 
-      background: accent.bg3;
+      background: accent.fg4;
 
       border-radius: style.border-radius;
 
@@ -46,7 +46,7 @@ export component Button {
 
       background: filled ? accent.bg2 : base-accent.bg1;
 
-      border-color: filled ? accent.fg2 : accent.fg2;
+      border-color: accent.fg2;
       border-width: style.border-width;
       border-radius: style.border-radius;
 
@@ -72,10 +72,10 @@ export component Button {
       i-background.y: style.depress / 2;
     }
     hover when i-touch-area.has-hover : {
-      i-bottom.background: accent.bg1;
-      i-bottom.drop-shadow-color: accent.fg1;
-      i-background.background: filled ? accent.bg3 : base-accent.bg2;
-      // i-background.border-color: filled ? accent.fg1 : accent.fg1;
+      i-bottom.background: accent.fg2; // Lighten from 4 to 2
+      i-bottom.drop-shadow-color: accent.fg4; // Darken from 3 to 4
+      i-background.background: filled ? accent.bg3 : base-accent.bg2; // Lighten from 2 to 3
+      i-background.border-color: accent.fg1; // Lighten from 2 to 1
       // i-label.color: filled ? base-accent.fg0 : accent.fg0;
     }
   ]
@@ -101,7 +101,7 @@ export component ButtonPaletteVerticalDisplay inherits VerticalBox {
   }
 }
 
-export component ButtonPaletteTableDisplay inherits Window {
+export component ButtonPaletteTableDisplay inherits Rectangle {
   // width: 300px;
   // height: 500px;
   background: MaterialScheme.base-accent.bg1;
@@ -130,15 +130,15 @@ export component ButtonPaletteTableDisplay inherits Window {
         Rectangle {
           background: MaterialScheme.scheme(true, "grey").bg0;
           HorizontalLayout {
-            ButtonPaletteVerticalDisplay { dark-color-scheme: true; boxy-style: true; enabled: false; }
-            ButtonPaletteVerticalDisplay { dark-color-scheme: true; boxy-style: true; filled: false; enabled: false; }
+            // ButtonPaletteVerticalDisplay { dark-color-scheme: true; boxy-style: true; enabled: false; }
+            // ButtonPaletteVerticalDisplay { dark-color-scheme: true; boxy-style: true; filled: false; enabled: false; }
           }
         }
         Rectangle {
           background: MaterialScheme.scheme(false, "grey").bg0;
           HorizontalLayout {
-            ButtonPaletteVerticalDisplay { dark-color-scheme: false; boxy-style: true; enabled: false; }
-            ButtonPaletteVerticalDisplay { dark-color-scheme: false; boxy-style: true; filled: false; enabled: false; }
+            // ButtonPaletteVerticalDisplay { dark-color-scheme: false; boxy-style: true; enabled: false; }
+            // ButtonPaletteVerticalDisplay { dark-color-scheme: false; boxy-style: true; filled: false; enabled: false; }
           }
         }
       }
@@ -161,15 +161,15 @@ export component ButtonPaletteTableDisplay inherits Window {
         Rectangle {
           background: MaterialScheme.scheme(true, "grey").bg0;
           HorizontalLayout {
-            ButtonPaletteVerticalDisplay { dark-color-scheme: true; enabled: false; }
-            ButtonPaletteVerticalDisplay { dark-color-scheme: true; filled: false; enabled: false; }
+            // ButtonPaletteVerticalDisplay { dark-color-scheme: true; enabled: false; }
+            // ButtonPaletteVerticalDisplay { dark-color-scheme: true; filled: false; enabled: false; }
           }
         }
         Rectangle {
           background: MaterialScheme.scheme(false, "grey").bg0;
           HorizontalLayout {
-            ButtonPaletteVerticalDisplay { dark-color-scheme: false; enabled: false; }
-            ButtonPaletteVerticalDisplay { dark-color-scheme: false; filled: false; enabled: false; }
+            // ButtonPaletteVerticalDisplay { dark-color-scheme: false; enabled: false; }
+            // ButtonPaletteVerticalDisplay { dark-color-scheme: false; filled: false; enabled: false; }
           }
         }
       }
