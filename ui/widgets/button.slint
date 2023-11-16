@@ -3,12 +3,14 @@ import { GlobalStyle, ButtonStyle } from "style/global.slint";
 
 export component Button {
   in property <AccentScheme> base-accent: MaterialScheme.base-accent;
-  in property <AccentScheme> accent: MaterialScheme.primary-accent;
-  in property <ButtonStyle> style: GlobalStyle.button;
+  in property <AccentScheme> accent: MaterialScheme.base-accent;
+
+  in-out property <bool> filled: style.filled;
+  in-out property <bool> boxy-style: false;
+  in property <ButtonStyle> style: boxy-style ? GlobalStyle.button-boxy : GlobalStyle.button;
 
   in-out property <string> text <=> i-label.text;
-  in-out property <bool> enabled: false;
-  in-out property <bool> filled: style.filled;
+  in-out property <bool> enabled: true;
 
   out property <bool> pressed: self.enabled && i-touch-area.pressed;
 
@@ -44,7 +46,7 @@ export component Button {
 
       background: filled ? accent.bg2 : base-accent.bg1;
 
-      border-color: filled ? accent.fg3 : accent.fg2;
+      border-color: filled ? accent.fg2 : accent.fg2;
       border-width: style.border-width;
       border-radius: style.border-radius;
 
@@ -73,6 +75,7 @@ export component Button {
       i-bottom.background: accent.bg1;
       i-bottom.drop-shadow-color: accent.fg1;
       i-background.background: filled ? accent.bg3 : base-accent.bg2;
+      // i-background.border-color: filled ? accent.fg1 : accent.fg1;
       // i-label.color: filled ? base-accent.fg0 : accent.fg0;
     }
   ]
@@ -82,13 +85,15 @@ import { GridBox , VerticalBox, ScrollView } from "std-widgets.slint";
 
 export component ButtonPaletteVerticalDisplay inherits VerticalBox {
   in property <bool> dark-color-scheme: true;
-  in property <ButtonStyle> style: GlobalStyle.button;
+  in property <bool> boxy-style: false;
+  in property <ButtonStyle> style: boxy-style ? GlobalStyle.button-boxy : GlobalStyle.button;
 
   in property <bool> enabled: true;
   in property <bool> filled: true;
 
   for color in MaterialPalette.colors: Button {
     style: style;
+    boxy-style: boxy-style;
     base-accent: MaterialScheme.scheme(dark-color-scheme, "grey");
     accent: MaterialScheme.scheme(dark-color-scheme, color);
     enabled: enabled;
@@ -102,35 +107,73 @@ export component ButtonPaletteTableDisplay inherits Window {
   background: MaterialScheme.base-accent.bg1;
 
   ScrollView {
-    HorizontalLayout {
-      Rectangle {
-        background: MaterialScheme.scheme(true, "grey").bg0;
-        HorizontalLayout {
-          ButtonPaletteVerticalDisplay { dark-color-scheme: true; }
-          ButtonPaletteVerticalDisplay { dark-color-scheme: true; filled: false; }
+    VerticalLayout {
+      Button {
+        text: "Ooga booga!";
+      }
+
+      HorizontalLayout {
+        Rectangle {
+          background: MaterialScheme.scheme(true, "grey").bg0;
+          HorizontalLayout {
+            ButtonPaletteVerticalDisplay { dark-color-scheme: true; boxy-style: true; }
+            ButtonPaletteVerticalDisplay { dark-color-scheme: true; boxy-style: true; filled: false; }
+          }
+        }
+        Rectangle {
+          background: MaterialScheme.scheme(false, "grey").bg0;
+          HorizontalLayout {
+            ButtonPaletteVerticalDisplay { dark-color-scheme: false; boxy-style: true; }
+            ButtonPaletteVerticalDisplay { dark-color-scheme: false; boxy-style: true; filled: false; }
+          }
+        }
+        Rectangle {
+          background: MaterialScheme.scheme(true, "grey").bg0;
+          HorizontalLayout {
+            ButtonPaletteVerticalDisplay { dark-color-scheme: true; boxy-style: true; enabled: false; }
+            ButtonPaletteVerticalDisplay { dark-color-scheme: true; boxy-style: true; filled: false; enabled: false; }
+          }
+        }
+        Rectangle {
+          background: MaterialScheme.scheme(false, "grey").bg0;
+          HorizontalLayout {
+            ButtonPaletteVerticalDisplay { dark-color-scheme: false; boxy-style: true; enabled: false; }
+            ButtonPaletteVerticalDisplay { dark-color-scheme: false; boxy-style: true; filled: false; enabled: false; }
+          }
         }
       }
-      Rectangle {
-        background: MaterialScheme.scheme(false, "grey").bg0;
-        HorizontalLayout {
-          ButtonPaletteVerticalDisplay { dark-color-scheme: false; }
-          ButtonPaletteVerticalDisplay { dark-color-scheme: false; filled: false; }
+
+      HorizontalLayout {
+        Rectangle {
+          background: MaterialScheme.scheme(true, "grey").bg0;
+          HorizontalLayout {
+            ButtonPaletteVerticalDisplay { dark-color-scheme: true; }
+            ButtonPaletteVerticalDisplay { dark-color-scheme: true; filled: false; }
+          }
+        }
+        Rectangle {
+          background: MaterialScheme.scheme(false, "grey").bg0;
+          HorizontalLayout {
+            ButtonPaletteVerticalDisplay { dark-color-scheme: false; }
+            ButtonPaletteVerticalDisplay { dark-color-scheme: false; filled: false; }
+          }
+        }
+        Rectangle {
+          background: MaterialScheme.scheme(true, "grey").bg0;
+          HorizontalLayout {
+            ButtonPaletteVerticalDisplay { dark-color-scheme: true; enabled: false; }
+            ButtonPaletteVerticalDisplay { dark-color-scheme: true; filled: false; enabled: false; }
+          }
+        }
+        Rectangle {
+          background: MaterialScheme.scheme(false, "grey").bg0;
+          HorizontalLayout {
+            ButtonPaletteVerticalDisplay { dark-color-scheme: false; enabled: false; }
+            ButtonPaletteVerticalDisplay { dark-color-scheme: false; filled: false; enabled: false; }
+          }
         }
       }
-      Rectangle {
-        background: MaterialScheme.scheme(true, "grey").bg0;
-        HorizontalLayout {
-          ButtonPaletteVerticalDisplay { dark-color-scheme: true; enabled: false; }
-          ButtonPaletteVerticalDisplay { dark-color-scheme: true; filled: false; enabled: false; }
-        }
-      }
-      Rectangle {
-        background: MaterialScheme.scheme(false, "grey").bg0;
-        HorizontalLayout {
-          ButtonPaletteVerticalDisplay { dark-color-scheme: false; enabled: false; }
-          ButtonPaletteVerticalDisplay { dark-color-scheme: false; filled: false; enabled: false; }
-        }
-      }
+
     }
   }
 }
