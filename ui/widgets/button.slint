@@ -91,29 +91,77 @@ export component Button {
   ]
 }
 
-import { GridBox , VerticalBox, ScrollView } from "std-widgets.slint";
+import { GridBox, VerticalBox, ScrollView } from "std-widgets.slint";
+import { LabelBar } from "labelbar.slint";
 
-export component ButtonPaletteTableDisplay inherits Rectangle {
-  // width: 300px;
-  // height: 500px;
+component ButtonColorsDisplay inherits Rectangle {
+  in property <bool> dark: true;
+  in property <ControlTheme> theme: Rounded;
+  in property <ControlSize> size: Medium;
+  in property <bool> filled: true;
+  in property <bool> enabled: true;
+
+  background: MaterialScheme.scheme(dark, "grey").bg0;
+
+  VerticalLayout {
+    i-label := LabelBar {
+      background: transparent;
+      text-color: dark ? Colors.white : Colors.black;
+      height: 60px;
+      font-size: 10px;
+      wrap: word-wrap;
+      text:
+        (dark ? "dark" : "light")
+        + (theme == ControlTheme.Boxy ? "-boxy" : theme == ControlTheme.Rounded ? "-rounded" : "")
+        + (filled ? "-filled" : "")
+        + (size == ControlSize.Large ? "-large"
+          : size == ControlSize.Medium ? "-medium"
+          : size == ControlSize.Small ? "-small" : "")
+        + (enabled ? "" : "-disabled");
+    }
+    for color in MaterialPalette.colors: Button {
+      base-accent: MaterialScheme.scheme(dark, "grey");
+      accent: MaterialScheme.scheme(dark, color);
+      enabled: enabled;
+      filled: filled;
+      size: size;
+      theme: theme;
+    }
+  }
+}
+
+export component ButtonStylesTableDisplay inherits Rectangle {
   background: MaterialScheme.base-accent.bg1;
 
   ScrollView {
-    HorizontalLayout {
-      for dark in [true, false] : Rectangle {
-        background: MaterialScheme.scheme(dark, "grey").bg0;
-
-        HorizontalLayout {
-          for theme in [ControlTheme.Boxy, ControlTheme.Rounded] : HorizontalLayout {
-          for size in [ControlSize.Small, ControlSize.Medium, ControlSize.Large] : HorizontalLayout {
-              for filled in [true, false] : VerticalLayout {
-              for color in MaterialPalette.colors: Button {
-                  base-accent: MaterialScheme.scheme(dark, "grey");
-                  accent: MaterialScheme.scheme(dark, color);
-                  // enabled: enabled;
-                  filled: filled;
-                  size: size;
+    VerticalLayout { // Stack different sizes vertically
+      for size in [ControlSize.Small, ControlSize.Medium, ControlSize.Large] : VerticalLayout {
+        LabelBar {
+          background: MaterialScheme.scheme(true, "grey").bg0;
+          text-color: MaterialScheme.scheme(true, "grey").fg0;
+          text:
+            size == ControlSize.Small ? "ControlSize.Small"
+            : size == ControlSize.Medium ? "ControlSize.Medium"
+            : size == ControlSize.Large ? "ControlSize.Large" : "";
+        }
+        HorizontalLayout { // Stack enabled/disabled horizontally
+          for enabled in [true, false] : HorizontalLayout {
+            for theme in [ControlTheme.Rounded, ControlTheme.Boxy] : HorizontalLayout {
+              for dark in [true, false] : HorizontalLayout {
+                Rectangle {
+                  width: 10px;
+                  background: MaterialScheme.scheme(dark, "grey").bg0;
+                }
+                for filled in [true, false] : ButtonColorsDisplay {
+                  dark: dark;
                   theme: theme;
+                  size: size;
+                  filled: filled;
+                  enabled: enabled;
+                }
+                Rectangle {
+                  width: 10px;
+                  background: MaterialScheme.scheme(dark, "grey").bg0;
                 }
               }
             }

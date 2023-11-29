@@ -1,23 +1,5 @@
-import { Button, VerticalBox } from "std-widgets.slint";
+import { ButtonStylesTableDisplay } from "widgets/button.slint";
 
 export component AppWindow inherits Window {
-  in-out property<int> counter: 0;
-  callback request-counter-add(int);
-  VerticalBox {
-    Text {
-      text: "Counter: \{root.counter}";
-    }
-    Button {
-      text: "-1";
-      clicked => {
-        root.request-counter-add(+1);
-      }
-    }
-    Button {
-      text: "+1";
-      clicked => {
-        root.request-counter-add(-1);
-      }
-    }
-  }
+  ButtonStylesTableDisplay {}
 }

@@ -573,23 +573,7 @@ component AccentSchemesDisplayWidget inherits HorizontalLayout {
   }
 }
 
-component LabelBar inherits Rectangle {
-  in property <brush> bg <=> self.background;
-  in property <brush> fg <=> i-label.color;
-  in property <string> text <=> i-label.text;
-  in property <length> font-size <=> i-label.font-size;
-
-  property <length> y-offset: self.height / 2 - i-label.height / 2;
-
-  background: #000000;
-  height: 50px;
-
-  i-label := Text {
-    x: parent.x + y-offset;
-    color: #FFFFFF;
-    font-size: 2rem;
-  }
-}
+import { LabelBar } from "widgets/labelbar.slint";
 
 import { ScrollView } from "std-widgets.slint";
 

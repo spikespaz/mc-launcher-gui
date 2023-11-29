@@ -6,16 +6,19 @@ lib,
 #
 cargo, rustc, makeRustPlatform,
 #
-llvmPackages_16, wayland, freetype, fontconfig, python3
+llvmPackages_16, wayland, freetype, fontconfig, python3,
+#
+pkg-config, qtwayland, wrapQtAppsHook
 #
 }:
 let
   manifest = lib.importTOML "${sourceRoot}/Cargo.toml";
 
+  stdenv = llvmPackages_16.stdenv;
   rustPlatform = makeRustPlatform {
+    inherit stdenv;
     cargo = cargo;
     rustc = rustc;
-    stdenv = llvmPackages_16.stdenv;
   };
 in rustPlatform.buildRustPackage {
   pname = manifest.package.name;
@@ -24,8 +27,13 @@ in rustPlatform.buildRustPackage {
   src = sourceRoot;
   cargoLock.lockFile = "${sourceRoot}/Cargo.lock";
 
-  nativeBuildInputs = [ python3 ];
-  buildInputs = [ wayland freetype fontconfig ];
+  noDefaultFeatures = true;
+  buildFeatures = ["backend-qt"];
+
+  nativeBuildInputs = [ python3 ]
+    ++ lib.optionals stdenv.isLinux [ pkg-config wrapQtAppsHook ];
+  buildInputs = [ wayland freetype fontconfig ]
+    ++ lib.optionals stdenv.isLinux [ wayland qtwayland ];
 
   meta = {
     inherit (manifest.package) description homepage;

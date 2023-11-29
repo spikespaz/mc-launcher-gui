@@ -10,16 +10,21 @@ description = "mc-launcher-gui"
 
 [dependencies.slint]
 version = "1.3.0"
+default-features = false
 features = [
-    # "backend-winit",
-    # "backend-winit-wayland",
-    # "renderer-winit-skia",
-    # "renderer-winit-skia-vulkan",
+    "compat-1-2",
+    "std",
+    "software-renderer-systemfonts",
+    "accessibility",
 ]
 
 
 [build-dependencies]
 slint-build = "1.3.0"
+
+[features]
+backend-qt = ["slint/backend-qt"]
+backend-winit = ["slint/backend-winit", "slint/renderer-skia-vulkan"]
 
 [profile.release]
 lto = true

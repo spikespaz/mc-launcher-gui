@@ -19,10 +19,8 @@
       devShells = eachSystem (system:
         let pkgs = pkgsFor.${system};
         in {
-          default = pkgs.mkShell {
-            strictDeps = true;
-
-            packages = with pkgs; [
+          default = self.packages.${system}.default.overrideAttrs (_: super: {
+            packages = super.packages or [ ] ++ (with pkgs; [
               (lib.hiPrio (rust-bin.stable.latest.minimal.override {
                 extensions = [ "rust-src" "rust-docs" "clippy" ];
               }))
@@ -30,10 +28,9 @@
                 toolchain.minimal.override {
                   extensions = [ "rustfmt" "rust-analyzer" ];
                 }))
-            ];
-
-            # RUST_BACKTRACE = 1;
-          };
+            ]);
+            SLINT_BACKEND = "Qt";
+          });
         });
 
       packages = eachSystem (system: {
@@ -43,7 +40,7 @@
 
       overlays = {
         mc-launcher-gui = pkgs: _: {
-          mc-launcher-gui = pkgs.callPackage ./nix/package.nix ({
+          mc-launcher-gui = pkgs.qt5.callPackage ./nix/package.nix ({
             inherit lib;
             sourceRoot = ./.;
             platforms = import systems;

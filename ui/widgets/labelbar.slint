@@ -1,0 +1,19 @@
+export component LabelBar inherits Rectangle {
+  in property <brush> text-color <=> i-label.color;
+  in property <string> text <=> i-label.text;
+  in property <TextWrap> wrap <=> i-label.wrap;
+  in property <length> font-size <=> i-label.font-size;
+  in property <TextHorizontalAlignment> horizontal-alignment <=> i-label.horizontal-alignment;
+
+  property <length> y-offset: self.height / 2 - i-label.height / 2;
+
+  background: #000000;
+  height: 50px;
+
+  i-label := Text {
+    width: root.width;
+    horizontal-alignment: center;
+    color: #FFFFFF;
+    font-size: 2rem;
+  }
+}
